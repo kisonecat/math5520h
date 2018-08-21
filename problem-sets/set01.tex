@@ -1,6 +1,7 @@
 \documentclass{homework}
 \course{Math 5520H}
 \author{Jim Fowler}
+\input{preamble}
 
 \begin{document}
 \maketitle
@@ -10,40 +11,64 @@ In mathematics, existence is freedom from contradiction.
 \byline{David Hilbert}
 \end{inspiration}
 
-systems of linear equations
-
-geometry of low-diml solutions
-gaussian elimination
-
-row echelon form
-
-proof by induction
-
-fields
-
 \section{Terminology}
 
 \begin{problem}
-  What are elementary row operations?
+  What are elementary row operations?  What does it mean to say that
+  two matrices are ``row equivalent'' matrices?
+\end{problem}
+
+\begin{problem}
+  What is a homogeneous system of linear equations?
+\end{problem}
+
+\begin{problem}
+  What is an augmented matrix?
+\end{problem}
+
+\begin{problem}
+  What does it mean to say that a matrix is in ``row echelon'' form?
 \end{problem}
 
 \begin{problem}
   What is the rank of a matrix?
 \end{problem}
 
-\begin{problem}
-  What is a vector space?
-\end{problem}
-
 \section{Numericals}
 
-row reduce some matrices
+\begin{problem}
+  Set $v = (1,2,3)$ and $w = (3,2,1)$ and $u = (1,1,1)$.  Find real
+  numbers $\alpha$ and $\beta$ so that $\alpha v + \beta w = u$.
+\end{problem}
 
-``row reduce'' some functions
+\begin{problem}
+  Find all solutions to the following system of linear equations:
+  \begin{align*}
+    \phantom{}x+y\phantom{+z+w} &= 1, \\
+    \phantom{x+}y+z\phantom{+w} &= 2, \\
+    \phantom{x+y+}z+w\phantom{} &= 3, \\
+    x+\phantom{y+z+}w\phantom{} &= 4. \\    
+  \end{align*}
+\end{problem}
 
-find lin indie polynomials
+\begin{problem}
+  Find all $\alpha, \beta \in \R$ so that for all $x \in \R$ we have $\alpha \sin x + \beta \cos x = 0$.  \textit{Hint:}~Relate this to solving a linear system of equations.
+\end{problem}
 
-sums of vectors
+\begin{problem}
+  Find all $(x,y,z) \in \R^3$ so that $\alpha^3 x + \alpha^2 y + \alpha z = 0$ for $\alpha \in \{1,2\}$.  What if we instead demand the equation holds for $\alpha \in \{1,2,3\}$?
+\end{problem}
+
+\begin{problem}
+  Pick real numbers $x$, $y$, $z$ and row reduce the matrix
+  \[
+    \begin{pmatrix}
+      x^2 & y^2 & z^2 \\
+      x^1 & y^1 & z^1 \\
+      x^0 & y^0 & z^0            
+    \end{pmatrix}.
+  \]
+\end{problem}
 
 \section{Exploration}
 
@@ -56,28 +81,71 @@ sums of vectors
   A quadrilateral in the plane $\R^2$ has vertices $A$, $B$, $C$, and
   $D$.  Let $M_{\overline{AB}}$ be the midpoint of side
   $\overline{AB}$, and similarly define $M_{\overline{BC}}$ and
-    $M_{\overline{CD}}$ and $M_{\overline{DA}}$.  Consider the polygon
-        having these four midpoints as its vertices; what sort of
-        polygon is it?
+  $M_{\overline{CD}}$ and $M_{\overline{DA}}$.  Consider the
+  quadrilateral having these four midpoints as its vertices; what sort
+  of polygon is it?
+\end{problem}
+
+\begin{problem}
+  Write down a randomly chosen $2$-by-$2$ matrix $M$, and apply row
+  operations to find a matrix in row echelon form which is row
+  equivalent to $M$.  What usually happens?
+\end{problem}
+
+\begin{problem}
+  When are two $2$-by-$2$ matrices row equivalent?
 \end{problem}
 
 \section{Prove or Disprove and Salvage if Possible}
 
 \begin{problem}
-  There exists a nonzero matrix which row reduces to the zero matrix.
+  The homogeneous system of linear equations $\mathcal{L}(M)$
+  associated with the matrix $M$ has a solution set $S$.  If $N$ is
+  another matrix row equivalent to $M$, then the solution set to
+  $\mathcal{L}(N)$ is also $S$.
 \end{problem}
 
 \begin{problem}
-  There exists a matrix which is not the identity matrix which row reduces to the identity matrix.
+  Let $M$ and $N$ be matrices which both have $c$ columns, and further
+  let $S$ and $T$ be the solution set associated with $\mathcal{L}(M)$
+  and $\mathcal{L}(N)$, respectively.  Then the homogeneous system of
+  linear equations associated to the block matrix $\begin{pmatrix} M \\
+    N \end{pmatrix}$ has solution set $S \cup T$.
+\end{problem}
+
+\begin{problem}
+  There exists a nonzero matrix which is row equivalent to the zero matrix.
+\end{problem}
+
+\begin{problem}
+  Suppose two $m$-by-$n$ matrices $A$ and $B$ have the same rank.
+  Then $A$ and $B$ are row equivalent.
+\end{problem}
+
+\begin{problem}
+  There exists a non-identity matrix which is row equivalent to the identity
+  matrix.
+\end{problem}
+
+\begin{problem}
+  There exists a symmetric matrix which is row equivalent to a matrix which
+  is not symmetric.
+\end{problem}
+
+\begin{problem}
+  A $3$-by-$3$ matrix is the sum of three rank $1$ matrices.
+\end{problem}
+
+\begin{problem}
+  An $n$-by-$n$ matrix with all entries equal to 1 has rank $n$.
+\end{problem}
+
+\begin{problem}
+  The sum of rank $n$ matrices has rank $n$.
 \end{problem}
 
 \begin{problem}
   Every diagonal matrix is a multiple of the identity matrix.
-\end{problem}
-
-\begin{problem}
-  There exists a symmetric matrix which row reduces to a matrix which
-  is not symmetric.
 \end{problem}
 
 \end{document}
