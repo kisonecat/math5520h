@@ -31,7 +31,7 @@
   \begin{center}
     \textbf{Linear Algebra and Differential Equations: Problem Set \#\arabic{problemset}} \\
     \@course \quad {\ifcase\month\or Winter\or Winter\or March\or Spring\or Spring\or Spring\or Summer\or Autumn\or Autumn\or Autumn\or Autumn\or Autumn\fi\space\number\year}
-  \end{center}
+  \end{center}\vspace{-3ex}
   }
 \makeatother
 
@@ -60,7 +60,7 @@
 \setlength{\parindent}{0in}
 \setlength{\parskip}{1ex}
 
-\newenvironment{inspiration}{\vspace{-4.5ex}\begin{center}\footnotesize\em}{\end{center}\vspace{-2ex}}
+\newenvironment{inspiration}{\begin{center}\footnotesize\em}{\end{center}\vspace{-1ex}}
 \newcommand{\byline}[1]{ \rm---#1} 
 
 \usepackage{nopageno}
