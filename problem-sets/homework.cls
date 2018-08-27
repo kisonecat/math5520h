@@ -51,11 +51,12 @@
 
 \usepackage{amssymb}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
 \makeatletter
 \newcounter{problem}
-\newenvironment{problem}{\makebox[0pt][r]{\refstepcounter{problem}\textbf{S\padzeroes[2]{\decimal{problemset}}P\padzeroes[2]{\decimal{problem}}.}\hspace{1em}}\ignorespaces\edef\@currentlabel{S\ifnum\theproblemset<10 0\theproblemset \else \theproblemset \fi P\ifnum\theproblem<10 0\theproblem \else \theproblem\fi}}{\vspace{1ex}}
+\newenvironment{problem}{\makebox[0pt][r]{\refstepcounter{problem}\textbf{S\padzeroes[2]{\decimal{problemset}}P\padzeroes[2]{\decimal{problem}}.}\hspace{1em}}\edef\@currentlabel{S\ifnum\theproblemset<10 0\theproblemset \else \theproblemset \fi P\ifnum\theproblem<10 0\theproblem\else\theproblem\fi}\ignorespaces}{\vspace{1ex}}
 \makeatother
 
 \newenvironment{problem*}{\makebox[0pt][r]{\refstepcounter{problem}\textbf{$\ast$ S\padzeroes[2]{\decimal{problemset}}P\padzeroes[2]{\decimal{problem}}.}\hspace{1em}}\ignorespaces}{\vspace{1ex}}
