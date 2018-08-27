@@ -31,8 +31,6 @@ That's all well and good in practice, but how does it work in theory?
 
 \section{Numericals}
 
-%check if certain subsets of continuous functions are subspaces?
-
 \begin{problem}
   Show that $\{ (2,1), (1,1) \}$ is a basis for $\R^2$.
 \end{problem}
@@ -44,12 +42,11 @@ That's all well and good in practice, but how does it work in theory?
 \end{problem}
 
 \begin{problem}
-  Find two polynomials $p,q \in \mathcal{P}_{2}(\R)$ so that $\{p,q\}$ are linearly independent, but $\{p',q'\}$ are linearly dependent.  Here $p'$ and $q'$ are the derivatives of $p$ and $q$, respectively.
+  Find two polynomials $p,q \in \mathcal{P}_{2}(\R)$ so that $\{p,q\}$ are linearly independent, but their derivatives $\{p',q'\}$ are linearly dependent.
 \end{problem}
 
 \begin{problem}
-  Find a $2$-by-$2$ matrix $A$ so that $(A^n)_{11} = 2^n$.  \\
-  Then find a $2$-by-$2$ matrix $B$ so that $(B^n)_{12} = n$.
+  Find a matrix $A$ so that $(A^n)_{11} = 2^n$ and a matrix $B$ so that $(B^n)_{12} = n$.
 \end{problem}
 
 \begin{problem}
@@ -58,7 +55,7 @@ That's all well and good in practice, but how does it work in theory?
 
 \begin{problem}
   Recall from a calculus class that
-  $\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots$.  Bravely replace $x$
+  $\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots$ when $x$ satisfies some condition.  Bravely replace $x$
   by a certain matrix in order to invert
   $\begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{pmatrix}$.
 \end{problem}
@@ -66,8 +63,14 @@ That's all well and good in practice, but how does it work in theory?
 \section{Exploration}
 
 \begin{problem}
+  Let $B = \{ b_1, \ldots, b_n \}$ be a basis for $V$.  Given a vector
+  $v \in V$, can you express $v$ as a linear
+  combination of the vectors in $B$?  In how many different ways?
+\end{problem}
+
+\begin{problem}
   Given vector spaces $V$ and $W$, endow $V \times W$ with the
-  structure of a vector space.  (We'll write $V \oplus W$ for this
+  structure of a vector space.  (Write $V \oplus W$ for this
   vector space.)
 \end{problem}
 
@@ -110,9 +113,9 @@ That's all well and good in practice, but how does it work in theory?
 \end{problem}
 
 \begin{problem}
-  For a finite dimensional subspace $V \subset \mathcal{P}(\R)$, can
-  you relate $\dim V$ and $\dim V'$, where $V'$ consists of the
-  derivatives of the polynomials in $V$?
+  For a finite dimensional subspace $V \subset \mathcal{P}(\R)$, the
+  set $V'$ consists of derivatives of the polynomials in $V$.  How do
+  $\dim V$ and $\dim V'$ relate?
 \end{problem}
 
 \section{Prove or Disprove and Salvage if Possible}
@@ -124,8 +127,8 @@ That's all well and good in practice, but how does it work in theory?
 
 \begin{problem}
   Eventually constant functions form a subspace of the vector space of
-  all functions $\R \to \R$.  (A function $f : \R \to \R$ is eventually
-  constant if there exists an $a,b \in \R$ so that for all $x \geq b$
+  all functions from $\R$ to $\R$.  (A function $f : \R \to \R$ is eventually
+  constant if there exists $a,b \in \R$ so that for all $x \geq b$
   we have $f(x) = a$.)
 \end{problem}
 
@@ -140,7 +143,7 @@ That's all well and good in practice, but how does it work in theory?
   independent.
 \end{problem}
 
-\begin{problem}\label{steinitz-exchange-lemma}If the vector space $V$ is spanned by $S = \{v_1,\ldots,v_n\}$,
+\begin{problem}\label{steinitz-exchange-lemma}If the space $V$ is spanned by $S = \{v_1,\ldots,v_n\}$,
   and the set $B = \{b_1,\ldots,b_m \} \subset V$ is linearly
   independent, then $m \leq n$ and there is a subset $S' \subset S$
   with $\# S' = n-m$ such that the set $B \cup S'$ spans $V$.
