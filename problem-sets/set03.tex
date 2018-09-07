@@ -1,4 +1,5 @@
 \documentclass{homework}
+\input{preamble}
 \course{Math 5520H}
 \author{Jim Fowler}
 
@@ -6,20 +7,158 @@
 \maketitle
 
 \begin{inspiration}
-A quote goes here.
-\byline{The Quoted}
+Unfortunately, no one can be told what the Matrix is. You have to see it for yourself.
+\byline{Morpheus in \textit{The Matrix}}
 \end{inspiration}
 
 \section{Terminology}
 
 \begin{problem}
-  What is terminology?
+  What is  a linear transformation?  (Recall \ref{terminology:matrix}.)
+\end{problem}
+
+\begin{problem}
+  What is the kernel of a linear transformation?  The image?  Rank?  Nullity?
+\end{problem}
+
+\begin{problem}
+  What is an inner product space?
+\end{problem}
+
+\begin{problem}
+  What is the commutator $[A,B]$?
 \end{problem}
 
 \section{Numericals}
 
+\begin{problem}
+  Use the basis of binomial coefficients (from
+  \ref{newton-interpolation}) to write down a matrix representing the
+  derivative operator on $\mathcal{P}_{3}(\R)$.
+\end{problem}
+
+\begin{problem}
+  Suppose $T : \R^5 \to \R^3$ is the linear transformation associated to the matrix
+  \[\begin{bmatrix}
+    1 & 0 & 1 & 1 & 0 \\
+    0 & 1 & 2 & 4 & 8 \\
+    0 & 0 & 0 & 0 & 0
+  \end{bmatrix}\]
+  with respect to the standard bases of $\R^5$ and $\R^3$.  Compute the rank and nullity of $T$.
+\end{problem}
+
+\begin{problem}
+  Suppose $n \geq 2$ and $\mathcal{B} = (e_0,\ldots,e_{n-1})$ is an ordered basis of $V$.  Find the rank and nullity of the transformation $f : V \to V$ defined by $f(e_i) = e_i + e_{i+1 \mod n}$.
+\end{problem}
+
+\begin{problem}
+  On the vector space of polynomials $\R[x]$, define two linear operators $M_x, \frac{d}{dx} : \R[x] \to \R[x]$ by the rules $M_x(f) = x \, f$ and $\frac{d}{dx}(f) = f'$, the derivative.  Do these operators commute?  Compute $[M_x,\frac{d}{dx}]$.
+\end{problem}
+
+\begin{problem}
+  For a $2$-by-$2$ matrix $A$, define the transformation
+  $f_A : \Mat_{2\times 2}(\R) \to \Mat_{2\times 2}(\R)$ by the rule
+  $f_A(M) = AM$.  Choose an ordered basis
+  $\mathcal{B}$ of $\Mat_{2\times 2}(\R)$ and compute
+  $[f_A]_{\mathcal{B}}$.  What is the rank of the kernel of $f_A$?
+\end{problem}
+
 \section{Exploration}
 
+\begin{problem}
+  Mathematics is like a collection of analogies.  The ``null space''
+  of a matrix is analogous to the kernel of a transformation; the
+  ``column space'' (or is it the ``row space''?) of a matrix is
+  related to the image of a corresponding transformation.  Explain these relationships.
+\end{problem}
+
+\begin{problem}
+  For a vector space $V$, the space of linear transformations
+  $\End(V) = \Hom(V,V)$ is a vector space.  Is it a ring (meaning in a
+  way compatible with the vector space structure)?  A field?  An
+  algebra over a field?
+\end{problem}
+
+\begin{problem}
+  Given mysterious linear transformations $f : V \to W$ and
+  $g : W \to U$ between finite dimensional vector spaces and knowing
+  only the ranks of $f$ and $g$ and the dimensions of the spaces
+  involved, how big or small could $\rank (g \circ f)$ be?
+\end{problem}
+
+\begin{problem}
+  For a square matrix $M$, the \textbf{minimal polynomial} of $M$ is
+  the monic polynomial $p$ of least degree such that $p(M) = 0$.
+  (What does it mean to evaluate a polynomial at a matrix?)  What is
+  the minimal polynomial of the transformation $f : V \to V$ given by
+  $f(v) = 2v$?
+\end{problem}
+
 \section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}
+  The function $E_2 : \mathcal{P}(\R) \to \R$ given by $E_2(f) = f(2)$ is a linear transformation.
+\end{problem}
+
+\begin{problem}
+  Suppose $V$ and $U$ are subspaces of a finite dimensional vector
+  space, and let $W$ be the smallest subspace containing $V$ and $U$.
+  Then $\dim W = \dim V + \dim U$.
+\end{problem}
+
+\begin{problem}
+  A maximal linearly independent set is a basis.
+\end{problem}
+
+\begin{problem}
+  Every vector space has a basis.
+\end{problem}
+
+\begin{problem}
+  The kernel of the transformation $T : V \to W$ is a subspace of $V$.
+\end{problem}
+
+\begin{problem}
+  The image of a basis is a basis.
+\end{problem}
+
+\begin{problem} % a couple possible salvages
+  A linear transformation $T : V \to V$ is injective iff $\ker T = V$.
+\end{problem}
+
+\begin{problem}
+  A linear transformation $T : V \to V$ is either surjective or has nontrivial kernel.
+\end{problem}
+
+\begin{problem}
+  Suppose $T : V \to V$ is a linear transformation.  Then because of the rank-nullity theorem, $\ker T \cap \image T = \{0\}$.
+\end{problem}
+
+\begin{problem}
+  Suppose $f, g: V \to V$ are linear transformations with the property that $f \circ g = \id$.  Then $g \circ f = \id$.
+\end{problem}
+
+\begin{problem}
+  Suppose $f : V \to V$ has the property for all $v \in V$ that $(f \circ f)(v) = 0$.  Then $\ker f \subset \image f$.
+\end{problem}
+
+\begin{problem}
+  Given linear operators $f, g : V \to V$ on a finite dimensional vector space $V$, suppose there is an ordered basis $\mathcal{B}$ of $V$ so that $[f]_{\mathcal{B}}$ and $[g]_{\mathcal{B}}$ are both diagonal matrices.  Then $f \circ g = g \circ f$.
+\end{problem}
+
+\begin{problem}
+  Given linear operators $f, g : V \to V$ on a finite dimensional
+  vector space $V$ with the property $f \circ g = g \circ f$, there is
+  an ordered basis $\mathcal{B}$ of $V$ so that $[f]_{\mathcal{B}}$
+  and $[g]_{\mathcal{B}}$ are both diagonal matrices.
+\end{problem}
+
+\begin{problem}
+  The vector space $V \cong \R^2$ has ordered basis $\mathcal{B} = (e_1,e_2)$ and the linear map $f : V \to V$ is represented by
+  \[
+    [f]_{\mathcal{B}} = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix}.
+  \]
+  Then the minimal polynomial of $f$ is $(x-a)(x-c)$.
+\end{problem}
 
 \end{document}
