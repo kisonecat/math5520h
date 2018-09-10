@@ -1,25 +1,144 @@
 \documentclass{homework}
 \course{Math 5520H}
 \author{Jim Fowler}
+\input{preamble}
 
 \begin{document}
 \maketitle
 
 \begin{inspiration}
-A quote goes here.
-\byline{The Quoted}
+  Solving linear systems with constant coefficients is the most
+  important technique the students learn in a differential equations
+  course.
+\byline{Gian-Carlo Rota}
 \end{inspiration}
 
 \section{Terminology}
 
 \begin{problem}
-  What is terminology?
+  What is a homogeneous differential equation?  Recall \ref{homogeneous-linear-equations}.
+\end{problem}
+
+\begin{problem}
+  What is an initial value problem?
 \end{problem}
 
 \section{Numericals}
 
+\begin{problem}
+  Find the general solution to $f''(t) + 5 f'(t) + 6 f(t) = 0$.
+\end{problem}
+
+\begin{problem}
+  Find the general solution to $f''(t) + 4 f'(t) + 4 f(t) = 0$.
+\end{problem}
+
+\begin{problem}
+  Find a solution to $f''(t) + 4 f(t) = \cos (2t)$ where $f(0) = f'(0) = 0$.  Explain why this is an example of \textbf{resonance.}
+\end{problem}
+
+\begin{problem}
+  Find a solution to $f''(t) + 2f'(t) + f(t) = \cos (2t)$ where $f(0) = f'(0) = 1$.  Identify the \textbf{transient} term.
+\end{problem}
+
+\begin{problem}
+  Find the general solution to $f^{(4)}(t) + 8\,f''(t) + 16\,f(t) = 0$.
+\end{problem}
+
+\begin{problem}
+  Find a solution to $f^{(3)}(t) + 3 \, f''(t) + 3 \, f'(t) + f(t) = 0$ such that $f(0) = 1$ and $f'(0) = 2$ and $f''(0) = 3$.
+\end{problem}
+
 \section{Exploration}
 
+\begin{problem}
+  For which $\lambda, \mu \in \C$ are the functions $f(x) = e^{\lambda x}$ and $g(x) = e^{\mu x}$ linearly independent?
+\end{problem}
+
+\begin{problem}\label{fibonacci-sequence}The vector space of real-valued sequences is denoted $\R^\infty$.
+  The shift operator $S : R^\infty \to \R^\infty$ is defined by
+  \[
+    S(a_1,a_2,\ldots) = (a_2,a_3,\ldots).
+  \]
+  The Fibonacci sequence $(1,1,2,3,5,\ldots)$ is in the kernel of $S^2 - S - \id$, which factors as $(S- \phi \cdot \id)(S - \bar{\phi} \cdot \id)$ where $\phi = \frac{1+\sqrt{5}}{2}$ and $\bar{\phi} = \frac{1-\sqrt{5}}{2}$.  Use this to recover \textbf{Binet's formula} computing the $n$th term in the Fibonacci sequence.  
+\end{problem}
+
+\begin{problem}\label{shift-repeated-roots}Describe the kernel of $T = S^2 - 4S + 4\id = (S-2\id)^2$.  For
+  example, the sequence of powers of two $(2,4,8,\ldots)$ is in the
+  kernel of $T$, but is the kernel of $T$ more than one dimensional?
+\end{problem}
+
+\begin{problem}
+  Use \ref{fibonacci-sequence} and \ref{shift-repeated-roots} to
+  explain how solving a differential equation is very much like
+  solving a recurrence relation.  How does this relate ``power
+  series'' methods for solving differential equations?
+\end{problem}
+
+\begin{problem}\label{introduction-phase-space}Explore how to ``trade dimensions for derivatives'' and make every differential equation into a one that involves a single derivative.  In other words, given a differential equation
+  \[
+    a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y  = 0,
+  \]
+  repackage $y$ as a vector $\textbf{y}$ so that the above equation becomes $\textbf{y}' = A \textbf{y}$ for a matrix $A$.  How is $A$ related to coefficients $a_i$?  This sheds some light on the significance of \textbf{phase space}.
+\end{problem}
+
+\begin{problem}\label{introduction-airy-function}The \textbf{Airy function} is a solution to the differential equation
+  \[
+    f''(x) - x f(x) = 0.
+  \]
+  We haven't yet shown that solutions exist, but suppose $f_1$ and
+  $f_2$ are both solutions to this equation and show $W(f_1,f_2)$
+  satisfies a first-order differential equation.  Can you solve that
+  equation?  This should be viewed as surprising: there isn't an easy
+  formula for the Airy function and yet you can compute the Wronskian
+  of \textit{two} solutions to a second-order equation.
+\end{problem}
+
 \section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}
+  Define $f, g : \R \to \R$ where $f(x) = x^2$ and $g(x) = x |x|$.  Then $\{ f, g \}$ is a linearly independent subset of $C(\R)$.
+\end{problem}
+
+\begin{problem}\label{wronskian-misconception}If the Wronskian of two functions is identically zero, then the
+  functions are linearly dependent.
+\end{problem}
+
+\begin{problem}Define $D : C^\infty(\R) \to C^\infty(\R)$ to be the
+  derivative operator, i.e., $D(f) = f'$.  For polynomials $p$ and
+  $q$, the commutator $[p(D),q(D)]$ vanishes.
+\end{problem}
+
+\begin{problem}\label{uniqueness-for-second-order}Suppose $y_1$ and $y_2$ are both solutions to the same second-order linear differential equation with constant coefficients and $y_1(0) = y_2(0)$ and $y'_1(0) = y'_2(0)$.  Then $y_1$ and $y_2$ are identical.
+\end{problem}
+
+\begin{problem}\label{wave-equation-orthogonal}Suppose $f_n$ satisfies $f''_n(x) = - n^2 f_n(x)$ and the boundary conditions $f_n(0) = f_n(2\pi)$ and $f'_n(0) = f'_n(2\pi)$ are satisfied, then
+  \[
+    \int_0^{2\pi} f_n(x) \, f_m(x) \, dx = 0.
+  \]
+  In other words, $f_n$ and $f_m$ are \textbf{orthogonal}.
+\end{problem}
+
+\begin{problem}Define $f_n(x) = \sin \left(nx\right)$.  In the vector
+  space of $2\pi$-periodic square-integrable functions, the set
+  $\{ f_n : n \in \N \}$ is linearly independent;
+  cf.~\ref{sin-cos-indie} and~\ref{definition-inner-product}
+  and~\ref{wave-equation-orthogonal}.
+\end{problem}
+
+\begin{problem}Suppose $y_1$ and $y_2$ are both solutions to
+  $y'' + \lambda y = 0$.  Then $y'_1 y_2 - y_1 y'_2$ is constant.
+\end{problem}
+
+\begin{problem}Suppose $y_1$ and $y_2$ are both solutions to
+  $y'' + y' + \lambda y = 0$.  Then $y'_1 y_2 - y_1 y'_2$ is constant.
+\end{problem}
+
+\begin{problem}
+  Suppose $y_1$ and $y_2$ are both solutions to
+  $y'' + p y' + q y = 0$ and there exists point $x$ such that $W(y_1,y_2)(x) = 0$.  Then $y_1$ and $y_2$ are linearly dependent.
+\end{problem}
+
+
 
 \end{document}
