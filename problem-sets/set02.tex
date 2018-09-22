@@ -53,10 +53,10 @@ That's all well and good in practice, but how does it work in theory?
   Find a square matrix $M$ so that $M^4 = 0$ but $M^3 \neq 0$.
 \end{problem}
 
-\begin{problem}
-  Recall from a calculus class that
-  $\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots$ when $x$ satisfies some condition.  Bravely replace $x$
-  by a certain matrix in order to invert
+\begin{problem}\label{inverse-via-calculus}Recall from a calculus class that
+  $\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots$ when $x$ satisfies some
+  condition.  Bravely replace $x$ by a certain matrix in order to
+  invert
   $\begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{pmatrix}$.
 \end{problem}
 
@@ -68,15 +68,32 @@ That's all well and good in practice, but how does it work in theory?
   combination of the vectors in $B$?  In how many different ways?
 \end{problem}
 
-\begin{problem}
-  Given vector spaces $V$ and $W$, endow $V \times W$ with the
+\begin{solution}
+  The vector $v$ can be written in exactly one way as a linear combination of the $b_i$.
+\end{solution}
+
+\begin{problem}\label{direct-sum-of-spaces}Given vector spaces $V$ and $W$, endow $V \times W$ with the
   structure of a vector space.  (Write $V \oplus W$ for this
   vector space.)
 \end{problem}
 
+\begin{solution}
+  Given $\lambda$ in the field and $(v_1,w_1), (v_2,w_2) \in V \times W$, define $\lambda (v_1,w_1) = (\lambda v_1, \lambda w_1)$ and
+  \[
+    (v_1,w_1) + (v_2,w_2) = (v_1 + v_2, w_1 + w_2).
+  \]
+  Then check that the vector space axioms hold.
+\end{solution}
+
 \begin{problem}
   What is $\dim \Mat_{n \times m}(\R)$?
 \end{problem}
+
+\begin{solution}
+  The dimension of $\Mat_{n \times m}(\R)$ is $nm$, because a basis
+  for $\Mat_{n \times m}(\R)$ consists of the $nm$ matrices which are
+  zero except for a single entry which equals 1.
+\end{solution}
 
 \begin{problem}
   Let $S$ be the set of degree $\leq 3$ polynomials (with real
@@ -86,6 +103,17 @@ That's all well and good in practice, but how does it work in theory?
   $\mathcal{P}(\R)$.  What is $\dim S$?
 \end{problem}
 
+\begin{solution}
+  Note that the zero polynomial satisfies the condition $p(2) = 0$,
+  and that linear combination of two polynomials which vanish at $2$
+  also vanishes at $2$.  A basis for this vector space is
+  \[
+    \{ x-2,\, (x-2)x,\, (x-2)x^2 \}
+  \]
+  because every degree $\leq 3$ polynomial which vanishes at $2$ has
+  $x-2$ as a factor.  This vector space $S$ is therefore 3 dimensional.
+\end{solution}
+
 \begin{problem}
   Suppose a subspace $V \subset \R^n$ is spanned by
   $\{v_1,\ldots,v_n\}$.  If you assemble these vectors together as the
@@ -93,6 +121,13 @@ That's all well and good in practice, but how does it work in theory?
   (\ref{definition-rank}) relate to the dimension of $V$?  Does ``row
   reducing'' help you find a basis for $V$?
 \end{problem}
+
+\begin{solution}
+  The rank of the matrix equals the dimension of $V$; this is the
+  \textbf{row space}.  Row reducing the matrix doesn't change the row
+  space, so after row reducing, the rows will form a basis for the row
+  space.
+\end{solution}
 
 \begin{problem}\label{frobenius-matrix}A matrix $M$ is a \textbf{Frobenius matrix} if $M_{ii} = 1$, all
   entries above the diagonal are zero, and with the exception of at
@@ -107,16 +142,39 @@ That's all well and good in practice, but how does it work in theory?
   Show that the inverse of a Frobenius matrix is again Frobenius.
 \end{problem}
 
+\begin{solution}
+  The inverse of this matrix is
+    \[\begin{pmatrix}
+      1&0&0&\cdots &0\\
+      0&1&0&\cdots &0\\
+      0&-a_{32}&1&\cdots &0\\
+      \vdots &\vdots &\vdots &\ddots &\vdots \\
+      0&-a_{n2}&0&\cdots &1
+    \end{pmatrix}.\]
+\end{solution}
+
 \begin{problem}
   Find a function $f : \Mat_{2\times 2}(\R) \to \R$ so that, for all
   $2$-by-$2$ matrices $A$ and $B$, we have $f(AB) = f(BA)$.
 \end{problem}
+
+\begin{solution}
+  The trace (the sum of the diagonal entries) and the determinant are
+  both examples of such a function.
+\end{solution}
 
 \begin{problem}
   For a finite dimensional subspace $V \subset \mathcal{P}(\R)$, the
   set $V'$ consists of derivatives of the polynomials in $V$.  How do
   $\dim V$ and $\dim V'$ relate?
 \end{problem}
+
+\begin{solution}
+  Let $C$ be the subspace of $\mathcal{P}(\R)$ consisting of constant
+  polynomials; note that $C$ is the kernel of the derivative.  If
+  $C \subset V$, then $\dim V' = \dim V - 1$.  Otherwise
+  $\dim V' = \dim V$.
+\end{solution}
 
 \section{Prove or Disprove and Salvage if Possible}
 
@@ -125,17 +183,41 @@ That's all well and good in practice, but how does it work in theory?
   $\mathcal{P}(\R)$.
 \end{problem}
 
-\begin{problem}
-  Eventually constant functions form a subspace of the vector space of
-  all functions from $\R$ to $\R$.  (A function $f : \R \to \R$ is eventually
-  constant if there exists $a,b \in \R$ so that for all $x \geq b$
-  we have $f(x) = a$.)
+\begin{solution}
+  The typo here is that $n = 0$ must be included.  To see that these
+  polynomials are linearly independent, if there were a dependence
+  $\sum c_n (1+x)^n = 0$, then replacing $x$ by $x-1$ would give
+  $\sum c_n x^n = 0$, so the coefficients vanish.  To see that they
+  span, one method is to compute the Taylor series!
+\end{solution}
+
+\begin{problem}\label{eventually-constant}Eventually constant functions form a subspace of the vector space of
+  all functions from $\R$ to $\R$.  (A function $f : \R \to \R$ is
+  eventually constant if there exists $a,b \in \R$ so that for all
+  $x \geq b$ we have $f(x) = a$.)
 \end{problem}
+
+\begin{solution}
+  It is not too hard to see that scalar multiples of an eventually
+  constant function are also eventually constant.  Sums are somewhat
+  harder: suppose $f, g : \R \to \R$ are eventually constant.  I claim
+  $f + g$ is also eventually constant.  To see why, there exists
+  $a_f,b_f,a_g,b_g$ so that for all $x \geq a_f$, we have $f(x) = b_f$
+  and for all $x \geq a_g$, we have $g(x) = b_g$.  Set $a$ to be the
+  larger of $a_g$ and $b_g$ and set $b = b_f + b_g$.  Then for
+  $x \geq a$, we have $(f+g)(x) = b_f + b_g$.
+\end{solution}
 
 \begin{problem}\label{sin-cos-indie}The set $\{ \sin, \cos \}$ is a linearly independent subset of the
   vector space of $2\pi$-periodic square-integrable functions;
   cf.~\ref{sin-cos-linear-system}.
 \end{problem}
+
+\begin{solution}
+  Suppose $\lambda \sin x + \mu \cos x \equiv 0$.  Plug in $x = 0$ and
+  $x = \pi/2$ and solve the resulting system of linear equations to
+  discover $\lambda = \mu \ -$, which is what we wanted to show.
+\end{solution}
 
 \begin{problem}
   For a vector space $V$ and for finite sets $A, B \subset V$ with
@@ -143,16 +225,32 @@ That's all well and good in practice, but how does it work in theory?
   independent.
 \end{problem}
 
+\begin{solution}
+  This is not true, but there are multiple possible salvages.  One is
+  that if $A$ is linearly \textit{dependent}, then $B$ is too.
+  Another is that if $B$ is linearly independent, then $A$ is linearly
+  independent.
+\end{solution}
+
 \begin{problem}\label{steinitz-exchange-lemma}If the space $V$ is spanned by $S = \{v_1,\ldots,v_n\}$,
   and the set $B = \{b_1,\ldots,b_m \} \subset V$ is linearly
   independent, then $m \leq n$ and there is a subset $S' \subset S$
   with $\# S' = n-m$ such that the set $B \cup S'$ spans $V$.
 \end{problem}
 
+\begin{solution}
+  This is true, and it is proved in many linear algebra text --- and
+  you will be expected to be able to give a proof on the exam.
+\end{solution}
+
 \begin{problem}
   Suppose $B$ and $B'$ are both bases for a finite dimensional vector
   space $V$.  Then $\# B = \# B'$.
 \end{problem}
+
+\begin{solution}
+  This is an application of the exchange lemma.  Since $B$ is linearly independent and $B'$ is a spanning set, then by exchange $\# B \leq \# B'$.  Since $B$ spans and $B'$ is linearly independent, $\# B \geq \# B'$.  Equality follows.
+\end{solution}
 
 \begin{problem}
   Let $V = \{ (a_1,a_2,\ldots) : a_i \in \R \}$ be the vector space of
@@ -166,9 +264,23 @@ That's all well and good in practice, but how does it work in theory?
   Then $\{ e_j : j \in \N \}$ spans $V$.
 \end{problem}
 
+\begin{solution}
+  This is not true; in fact the sequence ``all ones'' is not in the
+  span of $\{ e_j \}$.  A salvage is to point out that the span of
+  $e_j$ is a subspace, say consisting of sequences which are
+  eventually zero (in an homage to \ref{eventually-constant}).
+\end{solution}
+
 \begin{problem}
   The inverse of an upper triangular matrix is upper triangular.
 \end{problem}
+
+\begin{solution}
+  This is true.  One way to see this is via row operations: the row
+  operations which transform the given upper triangle matrix to the
+  identity, when applied to the identity matrix, preserve the property
+  of being upper triangular.
+\end{solution}
 
 \end{document}
 

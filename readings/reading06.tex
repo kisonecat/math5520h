@@ -8,13 +8,143 @@
 \begin{document}
 \maketitle
 
+I hope that you have been learning a lot this semester, and that your
+strong performance on Midterm~1 reflects how much progress you have
+made.  This is an intense course, but always remember that you can
+succeed on challenging tasks through your hard work.  Prof.~Gowers
+wrote on September 18, 2018:
+%https://gowers.wordpress.com/2018/09/09/has-an-uncomfortable-truth-been-suppressed/#comment-361850
+\begin{quote}
+  I don't deny that there is a link between mathematical ability and
+  raw intelligence, but I do think that the link is not as close as is
+  popularly believed. And the reason I think that is that the
+  correlation I have observed between mathematical success (defined
+  not in career terms but in terms of the quality of mathematics
+  produced) and raw intelligence (harder to define, but things like an
+  unusually good memory and a ``magic'' ability to see things very
+  quickly) is weaker than I thought before I became a mathematician.
+\end{quote}
+In addition to Midterm~1, last week was our introduction to
+eigenvectors and eigenvalues.  Along the way, we saw some examples of
+diagonalizable operators, and ended the week by noting that operators
+on finite dimensional vector spaces, at least over the complex
+numbers, can be represented by upper triangular matrices.  Can we do
+better than upper triangular?
+
+To see how, read \textit{Linear Algebra: An Introductory Approach} and
+look at
+\begin{itemize}
+\item \textsection 24 The triangular form theorem
+\item \textsection 23 The rational and Jordan canonical forms
+\end{itemize}
+This material is also in Axler's \textit{Linear Algebra Done Right},
+for instance, specifically in Chapter~5 and Chapter~8.
+
+Last week, we found that sometimes we do not have enough eigenvectors.
+We saw that this was reflected in the \textbf{minimal polynomial}
+which will continue to study this week.  To address our lack of
+sufficiently many eigenvectors, we introduce \textbf{generalized
+  eigenvectors} and generalized eigenspaces.  Quantifying the
+difference between eigenvectors and generalized eigenevctors leads to
+the notion of \textbf{algebraic versus geometric multiplicity.}
+
+Remember nilpotent matrices from the earlier problem sets?  This week
+we meet the \textbf{Jordan-Chevalley decomposition} which expresses an
+operator on a finite dimensional complex vector space as a sum of a
+diagonal (semisimple) operator and a nilpotent operator.  Exploring in
+this way will lead us to discover the \textbf{Jordan canonical
+  form}.\footnote{The canonical name for the Jordan canonical form
+  ought to be ``canonical'' but unfortunately some people call it the
+  ``Jordan normal form.''  I say ``unfortunately'' because the word
+  normal is already overloaded---normal subgroup, normal vector\ldots
+  and we will be exploring ``normal operators'' in Week~15 of this
+  course.}
+
+Last week, we noticed that a matrix satisfies its own characteristic
+polynomila, i.e., if $p(\lambda) = \det(A - \lambda I)$, then
+$p(A) = 0$.  This is the \textbf{Cayley-Hamilton theorem} but we'll
+see it again when we focus our attention on determinants, so it should
+not consume your attention this week.
+
+% minimal polynomial
+%algebraic and geometric multiplicity
+
+%Jordan decomposition
+%Jordan normal form
+
+
+
+
+
+\end{document}
+
+After having introduced differential equations last week, we noticed
+that a single second-order differential equation is related to a
+coupled pair of first-order equations, and this inspires us to think
+more deeply about $2 \times 2$ matrices, to consider eigenvectors and
+eigenvalues in the $2 \times 2$ case, and finally to consider the case
+of a linear operator $f : V \to V$.
+
+You will also be studying for \textbf{Midterm 1} this week and yet I
+want to make sure that you have time to digest the ``eigenstuff.''
+Therefore next week we will be considering ``generalized
+eigenvectors'' and we will have a chance to revisit this week's
+material in depth.
+
+As is the usual plan of attack, we rely on differential equations as a
+venue to motivate our study of linear algebra.  To make connections
+between differential equations and the eigenvectors and eigenvalues of
+$2 \times 2$ matrices, take a look at
+\textit{\href{/courses/43735/files/folder/textbooks}{Linear Algebra
+    and Differential Equations using MATLAB}}, namely
+\begin{itemize}
+\item \textsection 4.5 Uncoupled Linear Systems of Two Equations
+\item \textsection 4.6 Coupled Linear Systems
+\item \textsection 4.7 The Initial Value Problem and Eigenvectors
+\item \textsection 4.8 Eigenvalues of $2\times 2$ Matrices
+\item \textsection 4.9 Initial Value Problems Revisited  
+\end{itemize}
+
+To move into the general case of ``eigenstuff'' for an operator
+$f : V \to V$, study \textit{Linear Algebra Done Right} by Sheldon
+Axler, specifically in Chapter~5.  This material is also in
+\textit{Linear Algebra: An Introductory Approach}, specifically in
+\begin{itemize}
+\item \textsection 22 Basic concepts
+\item \textsection 23 Invariant subspaces
+\end{itemize}
+but I prefer Axler's introduction to eigenvectors and eigenvalues.
+Axler downplays the role of determinants, and I'd prefer that your
+desire to find invariant subspaces establish an intellectual need for
+determinants, rather than your simply being handed ``$\det$'' and
+running with it.  Reflect on the difference between the minimal
+polynomial and the characteristic polynomial.
+
+\textit{Warning:} It is possible you have concerns about your
+knowledge of polynomials over the complex numbers $\mathbb{C}$.
+Chapter~4 of \textit{Linear Algebra Done Right} and \textsection 20
+and \textsection 21 of \textit{Linear Algebra: An Introductory
+  Approach} both provide a review of polynomials.
+
+
 From \href{/courses/43735/files/folder/textbooks}{Linear Algebra and Differential Equations using MATLAB}, read 
 \begin{itemize}
-\item \textsection 4.9 Initial Value Problems Revisited
 \item \textsection 5.1 Vector Spaces and Subspaces
 \item \textsection 5.2 Construction of Subspaces
 \item \textsection 5.3 Spanning Sets
 \item \textsection 5.4 Linear Dependence and Linear Independence
 \end{itemize}
 
-\end{document}
+Look at \textit{Linear Algebra: An Introductory Approach} and focus on
+\begin{itemize}
+\item \textsection 22 Basic concepts
+\item \textsection 23 Invariant subspaces
+\end{itemize}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
