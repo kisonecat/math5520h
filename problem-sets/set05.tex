@@ -1,25 +1,165 @@
 \documentclass{homework}
 \course{Math 5520H}
 \author{Jim Fowler}
+\input{preamble}
 
 \begin{document}
 \maketitle
 
 \begin{inspiration}
-A quote goes here.
-\byline{The Quoted}
+I see the eigenvalue in thine eye, 
+I hear the tender tensor in thy sigh. \\
+Bernoulli would have been content to die,
+Had he but known such $a^2 \cos 2 \phi$! \\
+\byline{Stanislaw Lem, \textit{The Cyberiad}}
 \end{inspiration}
 
 \section{Terminology}
 
 \begin{problem}
-  What is terminology?
+  What is an eigenvector?  An eigenvalue?
+\end{problem}
+
+\begin{problem}
+  What is a \textit{generalized} eigenvector?
+\end{problem}
+
+\begin{problem}
+  What is a complementary subspace?  (Relate this to \ref{direct-sum-of-spaces}.)
+\end{problem}
+
+\begin{problem}
+  What is a nilpotent operator?
 \end{problem}
 
 \section{Numericals}
 
+% some generalized eigenvectors computation?
+
+\begin{problem}
+  An operator $T : V \to V$ is \textbf{simple} if the only $T$-invariant subspaces are $\{0\}$ and $V$.  Is  $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$ simple?  Does the field over which we work matter?
+\end{problem}
+
+\begin{problem}
+  Find an invertible matrix $P$ so that
+  \(
+    P \begin{pmatrix}
+      0 & 1 \\
+      1 & 1 
+    \end{pmatrix} P^{-1}
+  \)
+  is diagonal, and use this to produce a formula for $\begin{pmatrix}
+      0 & 1 \\
+      1 & 1 
+    \end{pmatrix}^n$.  Compare your formula to \ref{fibonacci-sequence}.
+\end{problem}
+
+\begin{problem}
+  A matrix $M = \left(\begin{array}{rrr}
+\frac{1}{2} & 1 & 0 \\
+0 & \frac{1}{2} & 1 \\
+0 & 0 & \frac{1}{2}
+\end{array}\right)$ is in Jordan canonical form.  Find a formula for $M^n$.
+\end{problem}
+
+\begin{problem}
+  Compute the Jordan canonical form of
+  $\begin{pmatrix} 1 & 1 \\ \epsilon & 1 \end{pmatrix}$ for a real number $\epsilon$.  What happens when $\epsilon = 0$?  When $\epsilon \neq 0$?
+\end{problem}
+
+\begin{problem}
+  The linear transformation $T : \R^5 \to \R^5$ in the standard basis $\mathcal{B}$ is represented by
+  \[
+    [T]_{\mathcal{B}} = \left(\begin{array}{rrrrr}
+            1 & 0 & 0 & 1 & 1 \\
+            0 & 0 & 0 & 1 & 0 \\
+            1 & 1 & 1 & 1 & 0 \\
+            1 & 1 & 0 & 0 & 0 \\
+            1 & 0 & 0 & 1 & 0
+          \end{array}\right)
+      \]
+      and has minimal polynomial $x^{5} - 2x^{4} - 2x^{3} + 3x^{2} + x - 1$.  Would the minimal polynomial change if we had chosen a different basis?  Is $T$ invertible?  What is the minimal polynomial of $T^{-1}$?  Can you answer these questions without seeing a matrix for $T$?
+\end{problem}
+
+\begin{problem}
+  A certain transformation $T : V \to V$ has minimal polynomial
+  $x^5 + x - 1$.  Find a polynomial $p$ so that $T^{-1} = p(T)$.
+\end{problem}
+
 \section{Exploration}
+
+\begin{problem}
+  What are the eigenvalues of a nilpotent transformation?
+\end{problem}
+
+\begin{problem}
+  Suppose $T : V \to V$ has the property that $T^2 = \id$.  Is it possible to decompose
+  $V$ into a subspace $U$ and a complementary subspace $W$ so that
+  $T |_U(v) = v$ and $T |_W(v) = -v$?
+\end{problem}
+
+\begin{problem}
+  For a linear transformation $T : V \to V$, consider the sequence
+  $a_k = \dim \ker T^k$.  Does it stabilize?  What if $V$ is finite
+  dimensional?  Does this mean the sequence of vector
+  spaces $V_k = \ker T^k$ eventually stabilizes?
+\end{problem}
+
+\begin{problem}
+  Find an operator $T : V \to V$ with an eigenvalue $\lambda$ so that its algebraic multiplicity is very from its geometric multiplicity.  How far apart can you make these two quantities?
+\end{problem}
+
+\begin{problem}
+  Develop the \textbf{polynomial functional calculus} in the following sense.  Suppose $p$ is a polynomial.  Then if $T : V \to V$ has eigenvalues $\lambda_1, \ldots, \lambda_n$, what are the eigenvalues of $p(T)$?  Begin by exploring the case for $T$ diagonalizable, and then apply your knowledge of Jordan canonical form.
+\end{problem}
+
+\begin{problem}
+  Solve \ref{independent-exponentials} again by finding an operator for which the functions $f(x) = e^{\lambda x}$ and $g(x) = e^{\mu x}$ are distinct eigenvectors and invoking \ref{eigenvectors-independent}.  Can you show that $e^x$ and $xe^x$ are independent this way?
+\end{problem}
 
 \section{Prove or Disprove and Salvage if Possible}
 
+\begin{problem}\label{eigenvectors-independent}
+  Eigenvectors corresponding to distinct eigenvalues are linearly independent.
+\end{problem}
+
+\begin{problem}
+  A transformation $T \in \Hom(V,V)$ has at most $\dim V$ eigenvalues.
+\end{problem}
+
+\begin{problem}
+  Suppose $f, g \in \Hom(V,V)$ and $g$ is invertible.  Then $g \circ f \circ g^{-1}$ and $f$ have the same eigenvalues and eigenvectors.
+\end{problem}
+
+\begin{problem}
+  Suppose $f,g \in \Hom(V,V)$ and $f \circ g = g \circ f$.  Then $f$ and $g$ have the same eigenvalues and eigenvectors.
+\end{problem}
+
+\begin{problem}\label{every-operator-satisfies-a-polynomial}
+  For an operator $T : V \to V$, there is a nonzero polynomial $p$
+  so that $p(T) = 0$.
+\end{problem}
+
+\begin{problem}
+  The minimal polynomial (cf. \ref{definition-minimal-polynomial}) is well-defined.
+\end{problem}
+
+\begin{problem}
+  The roots of the minimal polynomial of $T : V \to V$ are exactly the
+  eigenvalues of the operator $T$.
+\end{problem}
+
+\begin{problem}
+  For a finite dimensional vector space $V$, an operator $T : V \to V$
+  is said to be \textbf{semi-simple} if for every $T$-invariant
+  subspace, there is a complementary $T$-invariant subspace.  An
+  operator is semi-simple if and only if it is diagonalizable.
+\end{problem}
+
+
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
