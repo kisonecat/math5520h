@@ -106,7 +106,9 @@ Had he but known such $a^2 \cos 2 \phi$! \\
 \end{problem}
 
 \begin{problem}
-  Find an operator $T : V \to V$ with an eigenvalue $\lambda$ so that its algebraic multiplicity is very from its geometric multiplicity.  How far apart can you make these two quantities?
+  Find an operator $T : V \to V$ with an eigenvalue $\lambda$ so that
+  its algebraic multiplicity is differs greatly from its geometric
+  multiplicity.  How far apart can you make these two quantities?
 \end{problem}
 
 \begin{problem}
@@ -131,14 +133,29 @@ Had he but known such $a^2 \cos 2 \phi$! \\
   Suppose $f, g \in \Hom(V,V)$ and $g$ is invertible.  Then $g \circ f \circ g^{-1}$ and $f$ have the same eigenvalues and eigenvectors.
 \end{problem}
 
+\begin{solution}
+  BADBAD salvage by explaining what the actual eigenvectors are
+\end{solution}
+
 \begin{problem}
   Suppose $f,g \in \Hom(V,V)$ and $f \circ g = g \circ f$.  Then $f$ and $g$ have the same eigenvalues and eigenvectors.
 \end{problem}
+
+\begin{solution} one salvage is to assume diagonalizable, but that's more than needed.  one can also salvage by proving that they have a common eigenvector.
+\end{solution}
 
 \begin{problem}\label{every-operator-satisfies-a-polynomial}
   For an operator $T : V \to V$, there is a nonzero polynomial $p$
   so that $p(T) = 0$.
 \end{problem}
+
+\begin{solution}
+  The salvage here is that $\dim V < \infty$.  Then since $\dim \End(V) = n^2$, the set
+  \[
+    \{ T^0, T^1, \ldots, T^{n^2} \}
+  \]
+  is linearly dependent, so there is a polynomial identity.  You could also invoke the Cayley-Hamilton theorem at this point,but we don't need it.
+\end{solution}
 
 \begin{problem}
   The minimal polynomial (cf. \ref{definition-minimal-polynomial}) is well-defined.
@@ -149,12 +166,20 @@ Had he but known such $a^2 \cos 2 \phi$! \\
   eigenvalues of the operator $T$.
 \end{problem}
 
+\begin{solution}
+  Your proof of \label{every-operator-satisfies-a-polynomial} may be strong enough to handle this.  Instead of considering $\{ T^0, T^1, \ldots, T^{n^2} \}$, consider instead the smallest $m$ such that $\{ T^0, T^1, \ldots, T^{m} \}$ is linearly independent.
+\end{solution}
+
 \begin{problem}
   For a finite dimensional vector space $V$, an operator $T : V \to V$
   is said to be \textbf{semi-simple} if for every $T$-invariant
   subspace, there is a complementary $T$-invariant subspace.  An
   operator is semi-simple if and only if it is diagonalizable.
 \end{problem}
+\begin{solution}
+  Salvage: we work over an algebraically closed field.
+\end{solution}
+
 
 
 \end{document}
