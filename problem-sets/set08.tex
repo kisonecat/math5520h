@@ -6,20 +6,129 @@
 \maketitle
 
 \begin{inspiration}
-A quote goes here.
-\byline{The Quoted}
+  The worst thing you can do is to completely solve a problem.
+  \byline{Dan Kleitman}
 \end{inspiration}
 
 \section{Terminology}
 
 \begin{problem}
-  What is terminology?
+  What is a singular point?
 \end{problem}
 
 \section{Numericals}
 
+\begin{problem}\label{euler-cauchy-distinct-roots}Find the general solution to \(x^{2}{\displaystyle\frac  {d^{2}y}{dx^{2}}}-4x{\displaystyle\frac  {dy}{dx}}+6y=0\).\\
+  \textit{Hint:} use the Ansatz $y = x^m$.
+\end{problem}
+
+\begin{problem}\label{euler-cauchy-single-root}If we apply the Ansatz from
+  \ref{euler-cauchy-distinct-roots} to find the general solution to
+  \[ 
+    x^{2}{\frac  {d^{2}y}{dx^{2}}}-5x{\frac  {dy}{dx}}+9y=0
+  \]
+  we find $y = x^3$ is a solution, but is there another solution?  \textit{Hint:} use  \textbf{reduction of order} to find another.
+\end{problem}
+
+\begin{problem}Recall \ref{introduction-airy-function} in which we met the \textbf{Airy's equation}
+  \[
+    f''(x) - x f(x) = 0.
+  \]
+  Use your ideas from \ref{recurrence-differential-analogy} to find a series solution $f(x) = \sum_{k=0}^\infty c_k x^k$ to Airy's equation.
+\end{problem}
+
+\begin{problem}Use \ref{more-ricatti} to find a couple solutions to
+  \[
+    x^3 y'(x) = x^4 \, y(x)^2 + 3 \, x^2 \, y(x) + 6.
+  \]
+\end{problem}
+
 \section{Exploration}
 
+\begin{problem}Put together the knowledge you gained in \ref{euler-cauchy-distinct-roots} and \ref{euler-cauchy-single-root} to solve
+  \[
+    x^{2}{\frac {d^{2}y}{dx^{2}}}+ax{\frac {dy}{dx}}+by=0.
+  \]
+  This is a particular case of the \textbf{Euler--Cauchy equation},
+  and is remarkable for being a second order linear differential
+  equation that can be solved explicitly without resorting to special
+  functions.
+\end{problem}
+
+\begin{problem}\label{riccati-equation}In the past, we've ``traded dimensions for derivatives'' (cf. \ref{introduction-phase-space}).  Other trade-offs are
+  possible: here we study a first-order \textbf{Riccati equation} and
+  note that although it is not linear, finding a solution can be
+  reduced to solving a \textit{second-order} linear ordinary
+  differential equation---precisely the sort of differential equation
+  we are studying this week.
+
+  Consider the nonlinear differential equation of the form
+  \[
+    y'(x)=A(x)\,y^{2}(x) + B(x)\,y(x) + C(x)
+  \]
+  where $A(x) \neq 0$ and $C(x) \neq 0$.  (If $C(x) = 0$, then this is
+  a special case of \ref{bernoulli-equation}).
+
+  Show that if $z(x) = A(x) \, y(x)$, then
+  \[
+    z'(x)=y^{2}(x) + D(x)\,z(x) + E(x)
+  \]
+  for $D(x) = B(x) + A'(x)/A(x)$ and $E(x) = A(x) \, C(x)$.
+\end{problem}
+  
+\begin{problem}\label{more-ricatti}Continuing our above study of the Riccati equation,
+  show that if $z(x) = -w'(x)/w(x)$, we have
+  \[
+    w''(x) - D(x) \, w'(x) + E(x) w(x) = 0.
+  \]
+\end{problem}
+
+\begin{problem}
+  A differential equation for a forced oscillator is
+  $y''(x) + y(x) = f(x)$ where $f$ is the forcing function.  Because
+  of resonance (\ref{resonance-example}), even if $f$ is bounded, $y$
+  could be unbounded.  When results are unsatisfactory, change your
+  hypothesis!  Suppose there is an $M$ so that for all $a, b \in \R$
+  the integral $\int_a^b \left|f(x)\right| \, dx$ is less than $M$.
+  Under this stronger hypothesis, must a solution to
+  $y''(x) + y(x) = f(x)$ be bounded?
+\end{problem}
+
 \section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}
+  If $L(y) = y^{(n)} + \sum_{k=0}^{n-1} a_k y^{(k)}$ and $\varphi_1,\ldots,\varphi_n$ are solutions to $L(y) = 0$, then
+  \[
+    W'(\varphi_1,\ldots,\varphi_n)(x) = - a_{n-1}(x) W(\varphi_1,\ldots,\varphi_n)(x).
+  \]
+\end{problem}
+
+\begin{problem}
+  If $L(y) = y^{(n)} + \sum_{k=0}^{n-1} a_k y^{(k)}$ and 
+  both $\{\varphi_1,\ldots,\varphi_n\}$ and $\{\psi_1,\ldots,\phi_n\}$ are bases of $\ker L$, then
+  \[
+    \frac{W(\varphi_1,\ldots,\varphi_n)(x)}{W(\psi_1,\ldots,\psi_n)(x)}
+  \]
+  is constant.
+\end{problem}
+
+\begin{problem}For integers $n \geq 0$, there is a \textit{polynomial} $P_n(x)$ with $P_{n}(1)=1$ and satisfying
+  \textbf{Legendre's differential equation}
+  \[
+    \frac{d}{dx}\left(\left(1-x^{2}\right){\frac {d P_{n}(x)}{dx}}\right)+n(n+1)P_{n}(x)=0.
+  \]
+  These are the \textbf{Legendre polynomials.}
+\end{problem}
+
+\begin{problem}
+  If $\varphi_1$ and $\varphi_2$ are linearly independent solutions to
+  $y'' + c_1 y' + c_0 y = 0$, and $\varphi_1(a) = \varphi_1(b) = 0$
+  and $\varphi_1$ does not vanish for $x \in (a,b)$, then $\varphi_2$
+  has exactly one root in $(a,b)$.  (This is the \textbf{Sturm
+    separation theorem} and you may be amused to look at a graph of
+  the Airy function to appreciate the result.)
+\end{problem}
+  
+
 
 \end{document}
