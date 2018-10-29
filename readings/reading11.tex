@@ -8,13 +8,52 @@
 \begin{document}
 \maketitle
 
-From \href{/courses/43735/files/folder/textbooks}{Linear Algebra and Differential Equations using MATLAB}, read 
+Having studied inner products last week, we're in a stronger position
+to think about orthogonality.  And indeed, this week we'll see more
+examples of \textbf{orthogonal polynomials} like the \textbf{Laguerre
+  polynomials}, which are solutions to
+\[
+  x y'' + (1-x) \, y' + n \, y = 0.
+\]
+This is a linear differential equation with nonconstant coefficients,
+so we should not be scared as we have already studied that case in
+great detail.  And yet, the leading term is not constant---and at some
+points like $x = 0$, the leading term vanishes!  That more worrying
+behavior of \textbf{singular points} forms our main topic for this
+week.
+
+We will see some examples where this is bad news like
+\[
+  x^2 y'' - y' - y = 0
+\]
+but we will quickly focus on the case of \textbf{regular singular
+  points} where the \textbf{Frobenius method} and \textbf{Fuchs'
+  theorem} apply.
+
+The easiest case is one that we've already seen, namely the
+\textbf{Euler-Cauchy equation} which we'll generalize this week.
+Recall that the trick was to find solutions of the form $x^r$ for $r$
+not necessarily an integer.  Mixing that idea with the idea of series
+solutions is basically the \textbf{Frobenius method} which we'll try
+in a few examples.
+
+For details, look to Chapter~4 of Coddington's \textit{An Introduction
+  to Ordinary Differential Equations} which consists of
 \begin{itemize}
-\item \textsection 10.1 Orthonormal Bases
-\item \textsection 10.2 Least Squares Approximations
-\item \textsection 10.3 Least Squares Fitting of Data
-\item \textsection 10.4 Symmetric and Orthogonal Matrices
-\item \textsection 11.2 Equilibria and Linearization
+\item \textsection 4.1 Introduction
+\item \textsection 4.2 The Euler equation
+\item \textsection 4.3 Second order equations with regular singular points---an example
+\item \textsection 4.4 Second order equations with regular singular points---the general case
+\item \textsection 4.5 A convergence proof
+\item \textsection 4.6 The exceptional cases
+\item \textsection 4.7 The Bessel equation
+\item \textsection 4.8 The Bessel equation (continued)
+\item \textsection 4.9 Regular singular points at infinity
 \end{itemize}
+Note that we'll meet some ``famous'' functions, like the Bessel
+functions.  Don't be too distracted by the individual examples,
+because I especially want you to make connections and see the
+analogies between the many different ``famous'' examples, ultimately
+getting a preview of \textbf{Sturm-Liouville theory.}
 
 \end{document}
