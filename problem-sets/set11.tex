@@ -1,25 +1,205 @@
 \documentclass{homework}
 \course{Math 5520H}
 \author{Jim Fowler}
+\usepackage{tikz-cd}
+\input{preamble}
 
 \begin{document}
 \maketitle
 
 \begin{inspiration}
-A quote goes here.
-\byline{The Quoted}
+  I can assure you, at any rate, that my intentions are honourable and
+  my results invariant, probably canonical, perhaps even
+  functorial. But please allow me to assume that the characteristic is
+  not two.\byline{Andr\'e Weil (as ``Rudolf Lipschitz'')}
 \end{inspiration}
 
 \section{Terminology}
 
 \begin{problem}
-  What is terminology?
+  What is a \textit{quotient} of vector spaces?
+\end{problem}
+
+\begin{problem}
+  What is the dual of $V$?  \textit{Warning: this problem set will
+    challenge you to distinguish between adjoints of operators
+    (\ref{definition-adjoint}) and duals of spaces, which are both
+    denoted by a superscript $\star$.}
 \end{problem}
 
 \section{Numericals}
 
+\begin{problem}
+  The space of polynomials $\mathcal{P}$ has a basis
+  $\{1,x,x^2,\ldots\}$ of monomials.  Find a dual basis, described via
+  the derivative operator and evaluation functionals.
+\end{problem}
+
+\begin{problem}\label{f2-isomorphism-count}
+  Let $V = \left(\mathbb{F}_2\right)^2$ and find an isomorphism
+  $V \cong V^\star$.  How many such isomorphisms are there?
+\end{problem}
+
+\begin{problem}
+  Suppose $M$ is the matrix
+  \[
+    M = \begin{pmatrix} 1 & 2 \\
+      3 & 4 \\
+      5 & 6 \\
+      \vdots & \vdots \\
+      99 & 100
+      \end{pmatrix}
+    \]
+    Find the spectrum of the $50$-by-$50$ matrix $AA^\star$.  \textit{Hint:} The spectrum of $AA^\star$ is related to the spectrum of $A^\star A$, but how?
+  \end{problem}
+
+
+%when is the graph of a function a subspace?
+
+%Hom in and out of a product (infinite, sum)
+
+%dim R^oo / polynomials  = ?   show dual of polynomials is R^oo
+
+%reprise homological algebra
+
+
 \section{Exploration}
 
+\begin{problem}
+  Describe a ``natural'' map $D_V : V \to V^{\star\star}$ and verify
+  that it is injective.  Under what circumstances is your map $D_V$ an
+  isomorphism?
+\end{problem}
+
+\begin{problem}
+  Explain how the \textbf{second derivative test from multivariable
+    calculus} is related to the (real) spectral theorem.  Specifically, recall that when analyzing a critical point of $F : \R^n \to \R^n$, a key step was to build the \textbf{Hessian}, namely a matrix $H$ with entries
+  \[
+    H_{i,j} = \frac{\partial^2 F}{\partial x_j \partial x_j}.
+  \]
+  Is it true that $H_{i,j} = H_{j,i}$?  In that case, the Hessian is
+  symmetric.  How does this help in deciding whether a critical point
+  is a local maximum or local minimum or saddle?
+\end{problem}
+
+\begin{problem}\label{principal-component-analysis}An important application of the spectral theorem is
+  \textbf{principal component analysis} or ``PCA.''
+
+  Suppose $M$ is an $n$-by-$m$ matrix.  This is a \textbf{data matrix}
+  so we think of each row as representing a different experiment and
+  each column as representing a different sensor; write $\vec{v}_i$
+  for column $i$.
+
+  Suppose that the sensors are ``mean centered'' meaning that the
+  averages of the columns are zero, or in symbols that if
+  $1 \leq i \neq n$ then
+  \(\displaystyle\frac{1}{m} \sum_{j=1}^m \left(\vec{v}_i\right)_j =
+  0\).  The sensors, however, are likely to be correlated with each
+  other.
+
+  Explain why the dot product $\vec{v}_i \cdot \vec{v}_j$ reflects the
+  correlation between sensor $i$ and $j$.  Is being ``mean centered''
+  important?  Build a matrix $C$ with
+  $C_{ij} = \vec{v}_i \cdot \vec{v}_j$ and explain how applying the
+  spectral theorem to $C$ might reveal the ``structure'' of $M$.
+\end{problem}
+
+\begin{problem}
+  Suppose $V$ is a finite dimensional inner product space over $\C$,
+  and suppose $M : V \to V$ is Hermitian.  Define
+  \[
+    S = \{ v \in V : |v| = 1 \},
+  \]
+  and a map $f : S \to \R$ via $f(v) = \langle Tv, v \rangle$.
+  Suppose the maximum of $f$ is achieved at $w \in S$.  Show that $w$
+  an eigenvector with eigenvalue $f(w)$.
+
+  Does this argument also work over $\R$?  Did we invoke the
+  Fundamental Theorem of Algebra somewhere?  How did we show that
+  every operator on a finite dimensional vector space over $\C$ had an
+  eigenvalue?
+  
+  Without an inner product,
+  we relied on the Fundamental Theorem of Algebra to show that every operator on a finite dimensional vector space over $\C$ had an eigenvalue; 
+\end{problem}
+
+\begin{solution}
+  We first show that $w$ is an eigenvector with eigenvalue $f(w)$.
+  You can solve this problem quickly via Lagrange multipliers, but if
+  you would prefer not thinking about a constrained optimization
+  problem, extend $f$ to $f : V \to \R$ by the rule
+  $f(v) = \langle Tv, v \rangle / \langle v, v \rangle$.  Then let $v$
+  be a unit vector in $V$ with $\langle v, w \rangle = 0$.  For the
+  unit vector $w$ and any $\epsilon$ we have
+  $f(w) \geq f(w + \epsilon v)$, and since $f(w)$ is the maximum
+  value, we find the derivative ``in the tangent direction'' $v$ must
+  vanish, or in other words that $f(w + \epsilon v)$ differs from
+  $f(w)$ by something of order $\epsilon^2$.  To make this precise,
+  let's compute!
+  \begin{align*}
+    \langle Tw, w \rangle &\geq \frac{\langle T(w + \epsilon v), w + \epsilon v \rangle}{\langle w + \epsilon v, w + \epsilon v \rangle} \\
+                          &\geq \frac{1}{1 + |\epsilon|^2} \langle T(w + \epsilon v), w + \epsilon v \rangle,
+  \end{align*}
+  and after multiplying by $1 + |\epsilon|^2$ we find
+  \begin{align*}
+   |\epsilon|^2 \langle Tw, w \rangle &\geq \overline{\epsilon} \langle Tw, v \rangle + \epsilon \langle Tv, w \rangle + |\epsilon|^2 \langle Tv, v \rangle.
+  \end{align*}
+  Using the fact that $T$ is self-adjoint implies
+  \begin{align*}
+    |\epsilon|^2 \left( \langle Tw, w \rangle - \langle Tv, v \rangle \right) &\geq \overline{\epsilon \langle Tv, w \rangle} + \epsilon \langle Tv, w \rangle \\
+    &= \mbox{real part of } 2 \epsilon \langle Tv, w \rangle.
+  \end{align*}
+  Since $\langle Tw, w \rangle - \langle Tv, v \rangle \geq 0$, this means that 
+  \begin{align*}
+    |\epsilon|^2 \left( \mbox{something positive} \right) &\geq \mbox{real part of } 2 \epsilon \langle Tv, w \rangle,
+  \end{align*}
+  By replacing $\epsilon$ with $\pm \epsilon$ and $\pm i \epsilon$ and dividing by a positive real $\epsilon > 0$, we find
+  \begin{align*}
+    \epsilon \left( \mbox{positive} \right) &\geq \left| \mbox{real or imaginary of part of } 2 \langle Tv, w \rangle \right|,
+  \end{align*}
+  which implies $\langle Tw, v \rangle = 0$, and since $Tw$ is
+  orthogonal to all $v$ orthogonal to $w$, it must be that $Tw$ is a
+  multiple of $w$.
+  
+  This arguments also works over $\R$ (where it is maybe even easier)
+  and does not depend on the Fundamental Theorem of Algebra.  Recall
+  that we showed an operator on a complex vector space had an
+  eigenvalue by invoking the Fundamental Theorem of Algebra, but that
+  tool is not needed to show this fact for self-adjoint operators!
+\end{solution}
+
 \section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}%salvage to $M$ normal
+  The operator $M^\star$ and $M$ have conjugate eigenvalues and the same eigenvectors.
+\end{problem}
+
+\begin{problem}
+  A normal operator $M$ is self-adjoint if and only if $\Spec M \subset \R$.
+\end{problem}
+
+\begin{problem}% very much not unique!
+  If $A$ is normal, then for every $n$ there is a unique matrix $B$ so that $B^n = A$.  (Compare \ref{polynomial-functional-calculus}.)
+\end{problem}
+
+\begin{problem}%this is so wrong but I think maybe a common
+               %misconception?  salvage by noting iM is Hermitian, so
+               %you can apply a spectral theorem
+  If $M$ is skew-Hermitian (meaning $M^\star = -M$), then $M$ is
+  normal, so if $\lambda$ is an eigenvalue of $M$, then
+  $\bar{\lambda}$ is an eigenvalue of $M$.
+\end{problem}
+
+\begin{problem}
+  Suppose $f : V \to W$ is a linear map.  Then $f^{\star\star} : V^{\star\star} \to W^{\star\star}$ is also a linear map, and the diagram
+  \[\begin{tikzcd}
+      V \arrow{r}{f} \arrow{d}{D_V} & W \arrow{d}{D_W} \\
+      V^{\star\star} \arrow{r}{f^{\star\star}}  & W^{\star\star}
+    \end{tikzcd}\] commutes, meaning that
+  $D_W \circ f = f^{\star\star} \circ D_V$.  In this case, we say
+  ``there is a \textbf{natural transformation} from the identity
+  functor to the double dual functor.''
+\end{problem}
+
 
 \end{document}

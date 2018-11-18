@@ -8,12 +8,58 @@
 \begin{document}
 \maketitle
 
-From \href{/courses/43735/files/folder/textbooks}{Linear Algebra and Differential Equations using MATLAB}, read 
+Just as we followed \textbf{Midterm \#1} with more linear algebra, so
+too will \textbf{Midterm \#2} be followed with more linear algebra.
+Indeed, on the midterm you were faced with the following challenge:
+\begin{quote}
+  Suppose $V$ is a finite dimensional inner product space over the
+  complex numbers, and $T : V \to V$ is self-adjoint.  Show that there
+  is an orthonormal basis of $V$ consisting of eigenvectors for which
+  the corresponding eigenvalues are real.
+\end{quote}
+This is an example of a \textbf{spectral theorem}, i.e., in this case
+conditions which imply that an operator can be \textbf{diagonalized}.
+The reason that such a result belonged on the midterm is precisely
+because such results are central to our story relating differential
+equations and linear algebra: recall the frequency with which we
+showed that functions were orthogonal with respect to a certain inner
+product, and sometimes the ``moral'' for such orthogonality was that a
+self-adjoint differential operator was lurking in the background.
+
+From Axler's \textit{Linear Algebra Done Right}, read (or review)
 \begin{itemize}
-\item \textsection 12.3 The Continuous Flow Stirred Tank Reactor
-\item \textsection 12.4 The Remaining Global Bifurcations
-\item \textsection 12.5 Saddle-Node Bifurcations Revisited
-\item \textsection 12.6 Hopf Bifurcations Revisited
+\item \textsection 7.A Self-Adjoint and Normal Operators
+\item \textsection 7.B The Spectral Theorem
+\item \textsection 7.C Positive Operators and Isometries
+\item \textsection 7.D Polar Decomposition and Singular Value Decomposition
 \end{itemize}
+You can also look at \textit{Linear Algebra: An
+  Introductory Approach}, specifically \textsection 32 Unitary transformations and the spectral theorem.
+
+In both these sources, you will discover that a result like that from
+the midterm applies not only to operators satisfying $M^\star = M$,
+but more generally to operators with the property that
+$M^\star M = M M^\star$.  Such operators are said to be
+\textbf{normal}.  The eigenvalues of a normal operator need not be
+real, but nevertheless we will discover that $M$ is \textbf{unitarily
+  diagonalizable}.
+
+Unwrapping this will lead us to consider again the \textbf{Schur
+  decomposition}, which we saw briefly on a previous problem set.
+Instead of thinking about orthogonal complements (which is how I
+expected you would previously think about the Schur decomposition),
+this week we will reprise the Schur decomposition but via the
+\textbf{quotient spaces} we discussed last week.
+
+There is also a connection to the \textbf{Fundamental Theorem of
+  Algebra}.  To connect that theorem to linear algebra, I encourage
+you to read Harm Derksen's article \textit{The Fundamental Theorem of
+  Algebra and Linear Algebra} in \textit{The American Mathematical
+  Monthly}, Vol.~110, No.~7 (Aug.--Sep., 2003), pp. 620--623.
+As the course wraps up, we see many threads coming together, and we
+are increasingly making connections between previous topics.  Both
+linear algebra and differential equations are broad topics, and it is
+remarkable that a topic can be at once big but also tightly connected!
 
 \end{document}
+
