@@ -8,10 +8,49 @@
 \begin{document}
 \maketitle
 
-From \href{/courses/43735/files/folder/textbooks}{Linear Algebra and Differential Equations using MATLAB}, read 
-\begin{itemize}
-\item \textsection 13.1 Real Diagonalizable Matrices
-\item \textsection 13.2 Simple Complex Eigenvalues
-\end{itemize}
+A course in mathematics isn't just a sequence of theorems; it is a
+narrative that weaves definitions and theorems together into a story.
+Our story this semester has woven together linear algebra and
+differential equations, with examples like the constant coefficient
+case playing a key role in motivating the study of both.
+
+In this short week, we finally take up \textbf{Sturm–Liouville
+  theory}.  We've seen hints and shadows of this during our semester
+together, so this week provides a chance to connect and consolidate
+our past learning.  Specifically, we'll investigate differential equations of the form
+\begin{equation*}\label{sturm-liouville-form}\tag{$*$}
+{ {\frac {d }{d x}}\left( p(x){\frac { {d} y}{ {d} x}}\right)+q(x)y=-\lambda w(x)y,} \end{equation*}
+subject to certain \textbf{boundary conditions}.
+
+Why is this interesting?  For starters, many of the equations we have studied previously can be placed in the form~\eqref{sturm-liouville-form}.  For instance, the \textbf{Bessel equation}
+\[  x^{2}y''+xy'+\left(x^{2}-n^{2}\right)y=0
+\]
+could have been written in the form~\eqref{sturm-liouville-form} as
+\[
+  {\displaystyle \left(xy'\right)'+\left(x-{\frac {n ^{2}}{x}}\right)y=0,}
+\]
+and the \textbf{Legendre equation}
+\[
+{\displaystyle \left(1-x^{2}\right)y''-2xy'+n (n +1)y=0}
+\]
+can be written as
+\[
+  {\displaystyle \left(\left(1-x^{2}\right)y'\right)'+n (n +1)y=0}.
+\]
+But interest in Sturm–Liouville theory also lies in its connections to other mathematics.  Last week, for instance, we met spectral theorems, and there are likewise spectral theorems for Sturm-Liouville equations.  When $w \equiv 1$, the form~\eqref{sturm-liouville-form} becomes
+\[
+  \left( p(x) y'(x) \right)'+q(x)y=-\lambda y(x),
+\]
+or in other words, $-\lambda$ is an eigenvalue for the operator given by $Ly = \left( p \, y' \right)'+q \, y$.  Is $L$ self-adjoint?  Are eigenfunctions with different eigenvalues orthogonal?  Are the eigenvalues real?  
+
+This is a topic which isn't covered as well in our usual texts.  One
+textbook that I can recommend is a newer (2008) Springer book by
+Mohammed Al-Gwaiz entitled \textit{Sturm-Liouville Theory and its
+  Applications}, particularly the two dozen pages of \textsection 2.4
+The Sturm–Liouville Problem.  The rest of the book addresses the
+singular case.  The ``other'' Coddington textbook (\textit{Linear
+  Ordinary Differential Equations} by Coddington and Carlson) also
+discusses Sturm-Liouville theory.
+
 
 \end{document}
