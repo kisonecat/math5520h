@@ -8,13 +8,62 @@
 \begin{document}
 \maketitle
 
-From \href{/courses/43735/files/folder/textbooks}{Linear Algebra and Differential Equations using MATLAB}, read 
+My goal in crafting this course is to provide some scaffolding on
+which you will build your own understanding and learning.  Providing
+such scaffolding is especially important when there is a challenge
+shared by many students, like the challenge of getting a ``feeling''
+for the \textbf{tensor product} $\otimes$.  So this week, we build on
+our understanding of quotients and duals and bilinear forms to look
+carefully at the tensor product.
+
+To prepare, turn to \textit{Linear Algebra: An Introductory Approach}
+and review
 \begin{itemize}
-\item \textsection 13.3 Multiplicity and Generalized Eigenvectors
-\item \textsection 13.4 The Jordan Normal Form Theorem
-\item \textsection 14.1 Linear Systems in Jordan Normal Form
-\item \textsection 14.2 Qualitative Theory Near Equilibria
-\item \textsection 14.5 Quasiperiodic Motions and Tori
+\item \textsection 26 Quotient spaces and dual vector spaces
+\item \textsection 27 Bilinear forms and duality
 \end{itemize}
+which provide a foundation for our learning this week.  Then continue
+with
+\begin{itemize}
+\item \textsection 28 Direct sums and tensor products
+\end{itemize}
+which introduces the main subject.  If you would prefer to think about the tensor product more generally for $R$-modules, look at Keith Conrad's notes
+\begin{itemize}
+\item \href{http://www.math.uconn.edu/~kconrad/blurbs/linmultialg/tensorprod.pdf}{\textit{Tensor Products}} and
+\item \href{http://www.math.uconn.edu/~kconrad/blurbs/linmultialg/tensorprod2.pdf}{\textit{Tensor Products II}}.
+\end{itemize}
+
+One application of the tensor product is \textbf{complexification},
+which is itself a special case of \textbf{extension of scalars}
+permitting a vector space over a field $K$ to be viewed as a vector
+space over a larger field $L > K$.  A good source to read about
+complexification is Axler's \textit{Linear Algebra Done Right},
+specifically
+\begin{itemize}
+\item \textsection 9.A Complexification
+\end{itemize}
+and again Keith Conrad's short note \href{http://www.math.uconn.edu/~kconrad/blurbs/linmultialg/complexification.pdf}{\textit{Complexifications}} is a great source.
+
+The tensor product is perhaps the first object a student studies whose
+clearest definition is a universal property rather than an explicit
+construction.  Think back, for instance, to $V \oplus W$.  If we want
+a construction, we might think of $V \oplus W$ as pairs of vectors
+(the first from $V$, the second from $W$).  But we could also view
+$V \oplus W$ as the result of a certain universal property.  This
+week, we'll see a ``construction'' of the tensor product as well, but
+I suspect that you'll find the construction less satisfying.
+What's really going on is that the tensor product is a gadget from
+\textbf{multilinear algebra} which lets us regard a bilinear map
+$f : V \times W \to U$ as a linear map---but the price we pay is a
+more complicated domain.
+
+And paying the price of such abstraction, there had better be some
+sort of reward.  We'll finally put the \textbf{wedge product} written
+$\wedge$ on a firm foundation (giving a nice perspective on the
+\textbf{determinant}) which we'll extend by learning about the
+\textbf{Pfaffian}.  Our past learning about inner products which will
+deepened by considering \textbf{symplectic forms}.  My hope is that a
+little early exposure to such ideas will make your future travels
+through mathematics a bit easier.
 
 \end{document}

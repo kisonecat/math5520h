@@ -1,25 +1,155 @@
 \documentclass{homework}
 \course{Math 5520H}
 \author{Jim Fowler}
+\usepackage{tikz-cd}
+\input{preamble}
+
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \begin{document}
 \maketitle
 
 \begin{inspiration}
-A quote goes here.
-\byline{The Quoted}
+  Motto for a research laboratory: What we work on today, others will first think of tomorrow.
+  \byline{Alan J. Perlis} %in SIGPLAN Notices Vol. 17, No. 9, September 1982, pages 7 - 13.
 \end{inspiration}
 
 \section{Terminology}
 
 \begin{problem}
-  What is terminology?
+  What is $V \otimes W$?  (Do \ref{tensor-versus-hom} or
+  \ref{tensor-versus-bilinear-forms} provide a definition?)
 \end{problem}
+
+\begin{problem}
+  What is the complexification $V^{\C}$?
+\end{problem}
+
+\begin{problem}
+  What is $\bigwedge^n V$?
+\end{problem}
+
+%\begin{problem}
+%  What is $\Sym^n V$?
+%\end{problem}
 
 \section{Numericals}
 
+\begin{problem}
+  What is $\dim (V \otimes U)$ in terms of $\dim V$ and $\dim U$?
+\end{problem}
+
+\begin{problem}
+  Compute $\dim \bigwedge^k V$. % and $\dim \Sym^k V$.
+\end{problem}
+
+\begin{problem}
+  Use the fact that $\pm \sqrt{n} \in \Spec \begin{pmatrix} 0 & n \\ 1 & 0 \end{pmatrix}$ and \ref{spectrum-of-tensor} to find a $4$-by-$4$ matrix having eigenvalue $\sqrt{a} + \sqrt{b}$.
+\end{problem}
+
+\begin{problem}\label{pfaffian-definition}The \textbf{Pfaffian} of a skew-symmetric $2n$-by-$2n$ matrix $M$ is written $\pf(M)$ and satisfies
+  \[
+    \frac{1}{n!} \omega^n = \pf(M) e_1 \wedge \cdots \wedge e_{2n},
+  \]
+  where $\omega = \displaystyle\sum_{1 \leq i < j \leq 2n} M_{i,j} e_i \wedge e_j$.
+
+  In terms of the entries of $M$, find a formula for $\pf(M)$ when $M$
+  is a $4$-by-$4$ matrix.
+\end{problem}
+
 \section{Exploration}
 
+\begin{problem}\label{tensor-versus-hom}For finite dimensional vector spaces $V$ and $W$ defined over a
+  field $k$, relate $\Hom(V,W)$ to $V^\star \otimes W$, meaning define
+  a map
+  \[
+    F_{V,W} : \Hom(V,W) \to V^\star \otimes W
+  \]
+  and verify that it is isomorphism.
+  
+  Define $\trace : V^\star \otimes V \to k$ by the rule
+  $\trace(f \otimes v) = f(v)$; in particular, is $\trace$ bilinear?
+
+  For $M \in \Hom(V,V)$, does $\trace (F_{V,V} M)$ equal the trace of
+  $M$?  
+\end{problem}
+
+\begin{problem}
+  How do $\trace f$ and $\trace g$ relate to $\trace (f \otimes g)$?
+\end{problem}
+
+\begin{problem}\label{tensor-versus-bilinear-forms}For vector spaces $V, W, U$ defined over a field $k$, let $B(V,W)$
+  consist of all bilinear maps $V \times W \to k$.  How does $B(V,W)$
+  relate to $V \otimes W$?  What object is similarly related to
+  $V \otimes W \otimes U$?
+\end{problem}
+
+\begin{problem}
+  Let $U, V, W$ be finite dimensional vector spaces. Explain why \(\Hom(V^\star,W) \cong \Hom(W^\star,V)\) and explain why
+  \[
+    \Hom(\Hom(V^\star,W)^\star,U) \cong \Hom(V^\star,\Hom(W^\star,U)).
+  \]
+  Your explanation might connect these objects to various tensor products.
+\end{problem}
+
+\begin{problem}\label{symplectic-form-on-v-plus-v}A \textbf{symplectic form} is a non-degenerate skew-symmetric bilinear form\footnote{As usual, we work over a field of characteristic $\neq$ two.}.  Exhibit such a form on $V \oplus V^\star$.
+\end{problem}
+
+\begin{problem}
+  We have seen \textbf{extension of scalars} such as complexification; there is the dual notion  of \textbf{restriction of scalars}.  In this case of $\R$ and $\C$, this ``change of rings'' begins with a complex vector space $W$ and produces a real vector space $W_\R$.
+  
+  Suppose $W$ is a complex inner product space; define $B : W_\R \otimes W_\R \to \R$ by the rule
+  \[
+    B(x,y) = \Imag \langle x, y \rangle,
+  \]
+  or in words, $B(x,y)$ is the imaginary part of the inner product of $x$ and $y$.   Is $B$ non-degenerate?  Skew-symmetric?  Bilinear?  How does $B$ relate to the form you found in \ref{symplectic-form-on-v-plus-v}?
+\end{problem}
+
+\begin{problem}
+  In \ref{pfaffian-definition}, we computed $\pf(M)$ for a $4$-by-$4$
+  skew-symmetric matrix.  In this case, compute $\pf(M)^2$ and compare
+  it to $\det(M)$.  What conjectures can you make?
+\end{problem}
+
 \section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}\label{spectrum-of-tensor}If $\lambda$ is an eigenvalue of $f : V \to V$ and $\mu$ is an
+  eigenvalue of $g : W \to W$, then $\lambda \mu$ is an eigenvalue of
+  $f \otimes g$ and $\lambda + \mu$ is an eigenvalue of $f \otimes \id_W + \id_V \otimes g$.
+\end{problem}
+
+\begin{problem}
+  Every eigenvalue of $f \otimes g$ is of the form $\lambda \mu$ for
+  $\lambda \in \Spec f$ and $\mu \in \Spec g$.
+\end{problem}
+
+\begin{problem}
+  If $f : U \to V$ is injective, then $f \otimes f : U \otimes U \to V \otimes V$ is injective.
+\end{problem}
+
+\begin{problem}
+  If $\dim V$ and $\dim W$ are finite and $f : V \to V$ and $g : W \to W$ are linear, then $\det (f \otimes g) = (\det f) \cdot (\det g)$.
+\end{problem}
+
+\begin{problem}
+  Suppose $f : V \to W$ is a $\R$-linear map.  Then $f^{\C} : V^{\C} \to W^{\C}$ is a $\C$-linear map, and the diagram
+  \[\begin{tikzcd}
+      V \arrow{r}{f} \arrow{d}{j_V} & W \arrow{d}{j_W} \\
+      V^{\C} \arrow{r}{f^{\C}}  & W^{\C}
+    \end{tikzcd}\] commutes, meaning that
+  $j_W \circ f = f^{\C} \circ j_V$.  (Compare this to
+  \ref{natural-transformation-to-double-dual}.  What are the maps $j_V$ and $j_W$?  Do they depend on $f$?)
+\end{problem}
+
+\begin{problem}
+  For vector spaces $V$ and $W$ over $\R$, there is an isomorphism \(\Hom_\R(V , W)^\C \cong \Hom_\C(V^\C,W^\C)\).
+\end{problem}
+
+\begin{problem}
+  There is a symplectic form on a five-dimensional vector space.
+%  If $W$ is a vector space with a symplectic form, then $\dim W$ is even.
+\end{problem}
+
 
 \end{document}
