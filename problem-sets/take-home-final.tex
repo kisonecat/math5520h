@@ -1,0 +1,109 @@
+\documentclass{homework}
+\title{Take-Home Final Exam}
+\input{preamble}
+\course{Math 5520H}
+\author{Jim Fowler}
+\shortcode{M03}
+
+\begin{document}
+\maketitle
+
+\begin{inspiration}
+You've come such a long, long way, and I've watched you from that very first day: \\
+to see how you might grow, to see what you might do, to see what you've been through, \\ and all the ways you've made me proud of you. \\ \byline{\textit{Celestia's Ballad}, My Little Pony: Friendship is Magic}
+\end{inspiration}
+
+\section{Numericals}
+
+
+\begin{problem}
+  Suppose $p$ is a monic polynomial; write $P$ for the span of $p$ in
+  $\R[x]$.
+
+  Consider $V = \R[x]/P$, and define $M : V \to V$ by $M(q + P) = x \cdot q + P$.
+
+  What is the characteristic polynomial of $M$?  The minimal polynomial?
+\end{problem}
+
+\section{Exploration}
+
+\begin{problem}
+  A focus of our study has been differential equations of the form
+  \begin{equation}\label{differential-equation}\tag{$*$}
+    y'' + b\, y' + c y = 0
+  \end{equation}
+  for $b, c \in \R$.  Relate this equation to the equation
+  \[
+    \frac{d}{dx} \begin{pmatrix} y \\ y' \end{pmatrix} = A \begin{pmatrix} y \\ y' \end{pmatrix}
+  \]
+  for a certain $2$-by-$2$ matrix $A$.  Can it be that $A$ is similar to
+  \(
+    \displaystyle\begin{pmatrix} \lambda & 0 \\ 0 & \lambda  \end{pmatrix}
+    \)?
+    
+  Use your knowledge of Jordan canonical form to describe the solutions to \eqref{differential-equation}.
+\end{problem}
+
+\begin{problem}
+  Every complex number $z \in \C$ can be written as
+  $z = e^{i \theta}\, r$ for some $r, \theta \in \R$.  Likewise show
+  that if $T$ is normal, then $T = UP$ for a unitary operator $U$ and
+  a positive operator $P$.  This is the \textbf{polar decomposition}
+  of the operator $T$.
+
+  Is this polar decomposition unique?
+\end{problem}
+
+\begin{problem}
+  For a finite-dimensional vector space $V$ over $\R$, suppose
+  $f : V \times V \to \R$ is a bilinear form which is symmetric,
+  meaning $f(v,w) = f(w,v)$, and positive semidefinite, meaning
+  $f(v,v) \geq 0$.
+
+  Define $Z = \{ v \in V : f(v,v) = 0 \}$.  Is $Z$ a subspace of $V$?
+  
+  Can you use $f$ to construct an inner product on $V/Z$?
+\end{problem}
+
+\begin{problem}
+  By $J_0$, we mean a certain solution to
+  \begin{equation}\label{bessel-equation}\tag{$**$}
+    x^2 \, y'' + x \, y' + x^2 \, y = 0.
+  \end{equation}
+  Let $[a,b]$ be an interval on which $J_0(x)$ is positive.  Why is
+  there such an interval?
+
+  Then define $Y_0 : [a,b] \to \R$ by 
+  \[
+    Y_0(x) = J_0(x) \int_a^x \frac{dt}{t \, J_0(x)^2}.
+  \]
+  Does $Y_0$ satisfy \eqref{bessel-equation}?  Are $J_0$ and $Y_0$
+  linearly independent?
+\end{problem}
+
+\section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}
+  Suppose $V$ and $W$ are finite dimensional vector spaces over a field $k$.
+
+  Then $V \cong W$ if and only if $\dim V = \dim W$.
+\end{problem}
+
+\begin{problem}
+  If $A = (a_{jk}) \in \Mat_{n\times n}(\C)$ has an eigenvalue $\lambda$, then
+  there exists $j$ so that
+  \[
+    \left| \lambda - a_{jj} \right| < \sum_{k \neq j} \left|a_{jk} \right|.
+  \]
+  (This is the \textbf{Gershgorin circle theorem.})
+\end{problem}
+
+\begin{problem}
+  Define the operator $L$ by
+  \[
+    Ly = y'' + b \, y' + c \, y,
+  \]
+  for $b, c \in \R$.  If $Lf = Lg = 0$ and $f(0) = g(0)$ then $f \equiv g$.
+\end{problem}
+
+\end{document}
