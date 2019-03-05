@@ -1,20 +1,61 @@
-\documentclass{homework}
+\documentclass[11pt]{homework}
 \input{preamble}
 \usepackage{hyperref}
 \author{Jim Fowler}
 \course{Math 5520H}
 \title{Assigned Readings for Week 7}
 \date{Monday, October 1, 2018}
+\setlength{\itemsep}{0in}
 \begin{document}
 \maketitle
 
-From \href{/courses/43735/files/folder/textbooks}{Linear Algebra and Differential Equations using MATLAB}, read 
+As our journey comes to its middle, we return our attention to
+\textit{differential equations}, and you may enjoy searching the
+internet for Gian-Carlo Rota's recommendations for ``reforms'' to the
+second-year differential equations course, and in particular his
+feelings about the sorts of theorems we are focusing on this week.
+
+And just what are we focusing on?  This week, we return again to
+initial value problems, but this time we look at the
+\textbf{Picard-Lindel\"of theorem}, the statement of which ensures
+that \textbf{Picard's method} of successive approximations actually
+converges to a solution.  This content is in Chapter~5 of Coddington's
+differential equations text, so look in \textit{An Introduction to
+  Ordinary Differential Equations} and focus on
 \begin{itemize}
-\item \textsection 5.5 Dimension and Bases
-\item \textsection 5.6 The Proof of the Main Theorem
+\item \textsection 5.4 The method of successive approximations
+\item \textsection 5.5 The Lipschitz condition
+\item \textsection 5.6 Convergence of the successive approximations
+\item \textsection 5.7 Non-local existence of solutions
+\item \textsection 5.8 Approxmations to, and uniqueness of, solutions
+\end{itemize}
+These iterative methods are built on a foundation of the
+\textbf{Banach fixed-point theorem}, and formulating that will lead us
+to consider \textbf{metric spaces,} an object you may be familiar with
+from your work in analysis.
+
+As usual, there is some ``computation'' task for us each week, and these computations lie mainly with
+\begin{itemize}
+  \item \textsection 5.2 Equations with variables separated
+  \item \textsection 5.3 Exact equations
+\end{itemize}
+which will provide you with some additional techniques for practically
+solving certain differential equations.
+
+To connect the differential equations story back to linear algebra,
+look at \textit{\href{/courses/43735/files/folder/textbooks}{Linear
+    Algebra and Differential Equations using MATLAB}} and note how
+Jordan canonical form relates to solving differential equations.
+Matrix exponentials play a particular role.  Specific sections to look
+at include
+\begin{itemize}
 \item \textsection 6.1 The Initial Value Problem
 \item \textsection 6.2 Closed Form Solutions by the Direct Method
 \item \textsection 6.3 Solutions Using Matrix Exponentials
+\item \textsection 6.4 Linear Jordan Normal Form Planar Systems
+\item \textsection 6.5 Similar Matrices and Jordan Normal Form
+\item \textsection 6.6 The Cayley Hamilton Theorem
+\item \textsection 6.7 Second Order Equations  
 \end{itemize}
 
 \end{document}
