@@ -76,6 +76,13 @@ It takes a very unusual mind to undertake the analysis of the obvious. \\
   of your power series?
 \end{problem}
 
+\begin{solution}
+  Also, I want to show off other phenomena.
+
+  Consider $x^3 y'' + x y' - y = 0$.  Since $y = x$ is a solution, we
+  can use variation of parameters to find another solution.
+\end{solution}
+
 \begin{problem}
   Consider the three equations
   \begin{align}
@@ -140,6 +147,28 @@ It takes a very unusual mind to undertake the analysis of the obvious. \\
   \(L_n(x) = e^x \displaystyle\frac{d^n}{dx^n} (x^n e^{-x})\),
   satisfies the Laguerre equation \(x y'' + (1-x) \, y' + n \, y = 0\).
 \end{problem}
+
+\begin{solution}
+  Let $f = x^n e^{-x}$.  Since $f' = (n-x) x^{n-1} e^{-x}$, we note
+  \[
+    x f' + (x-n) f  = 0.
+  \]
+  Differentiating this relation $n+1$ times proves
+  \begin{align*}
+    0 &= \frac{d^{n+1}}{dx^{n+1}} (x f') + \frac{d^{n+1}}{dx^{n+1}} ((x-n) f) \\
+      &= x f^{(n+2)} + (n+1) f^{(n+1)} + ( x - n ) f^{(n+1)} + (n+1) f^{(n)}
+      &= x f^{(n+2)} + (1+x) f^{(n+1)} + (n+1) f^{(n)}
+  \end{align*}
+  Since $e^{-x} L_n(x) = f^{(n)}(x)$, we have
+  \begin{align*}
+    0 &= x \left( e^{-x} L_n(x) - e^{-x} L'_n(x) - e^{-x} L'_n(x) + e^{-x} L''_n(x)  \right) + (1+x) \left( - e^{-x} L_n(x) + e^{-x} L'_n(x) \right)  + (n+1) e^{-x} L_n(x)
+  \end{align*}
+  or equivalently
+  \begin{align*}
+    0 &= x  L''_n(x)  + (1-x) L'_n(x)  + n \, L_n(x)
+  \end{align*}
+  which is what we wanted to show.
+\end{solution}
 
 \begin{problem}
   Define an inner product via

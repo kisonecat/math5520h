@@ -12,8 +12,7 @@
 
 \section{Terminology}
 
-\begin{problem}
-  What is a singular point?
+\begin{problem}\label{defn-singular-point}What is a singular point?
 \end{problem}
 
 \section{Numericals}
@@ -37,6 +36,7 @@
   Use your ideas from \ref{recurrence-differential-analogy} to find a series solution $f(x) = \sum_{k=0}^\infty c_k x^k$ to Airy's equation.
 \end{problem}
 
+
 \begin{problem}Use \ref{more-ricatti} to find a couple solutions to
   \[
     x^3 y'(x) = x^4 \, y(x)^2 + 3 \, x^2 \, y(x) + 6.
@@ -45,7 +45,7 @@
 
 \section{Exploration}
 
-\begin{problem}Put together the knowledge you gained in \ref{euler-cauchy-distinct-roots} and \ref{euler-cauchy-single-root} to solve
+\begin{problem}\label{second-order-euler-cauchy}Put together the knowledge you gained in \ref{euler-cauchy-distinct-roots} and \ref{euler-cauchy-single-root} to solve
   \[
     x^{2}{\frac {d^{2}y}{dx^{2}}}+ax{\frac {dy}{dx}}+by=0.
   \]
@@ -112,7 +112,7 @@
   is constant.
 \end{problem}
 
-\begin{problem}For integers $n \geq 0$, there is a \textit{polynomial} $P_n(x)$ with $P_{n}(1)=1$ and satisfying
+\begin{problem}\label{legendre-polynomials}For integers $n \geq 0$, there is a \textit{polynomial} $P_n(x)$ with $P_{n}(1)=1$ and satisfying
   \textbf{Legendre's differential equation}
   \[
     \frac{d}{dx}\left(\left(1-x^{2}\right){\frac {d P_{n}(x)}{dx}}\right)+n(n+1)P_{n}(x)=0.
@@ -120,15 +120,16 @@
   These are the \textbf{Legendre polynomials.}
 \end{problem}
 
-\begin{problem}
-  If $\varphi_1$ and $\varphi_2$ are linearly independent solutions to
+
+\begin{problem}\label{sturm-separation}If $\varphi_1$ and $\varphi_2$ are linearly independent solutions to
   $y'' + c_1 y' + c_0 y = 0$, and $\varphi_1(a) = \varphi_1(b) = 0$
   and $\varphi_1$ does not vanish for $x \in (a,b)$, then $\varphi_2$
   has exactly one root in $(a,b)$.  (This is the \textbf{Sturm
     separation theorem} and you may be amused to look at a graph of
   the Airy function to appreciate the result.)
 \end{problem}
-  
+
+
 
 
 \end{document}

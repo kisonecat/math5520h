@@ -13,8 +13,7 @@ It is my experience that proofs involving matrices can be shortened by 50\% if o
 
 \section{Terminology}
 
-\begin{problem}
-  What is the adjoint of a linear transformation?  Compare the adjoint
+\begin{problem}\label{definition-adjoint}What is the adjoint of a linear transformation?  Compare the adjoint
   to the transpose of a matrix, which we defined in
   \ref{transpose-definition}.
 \end{problem}
@@ -43,7 +42,7 @@ It is my experience that proofs involving matrices can be shortened by 50\% if o
 \end{problem}
 
 \begin{problem}
-  Prove that there is a constant $C$  such that,  if  $p(x)$  is a polynomial of degree 1999,  then  $|p(0)| \leq \displaystyle\int_{-1}^1 \left|p(x)\right| \, dx$. (Credit: Putnam 1999, Problem A5.)
+  Prove that there is a constant $C > 0$  such that,  if  $p(x)$  is a polynomial of degree 1999,  then  $|p(0)| \leq C \displaystyle\int_{-1}^1 \left|p(x)\right| \, dx$. (Credit: Putnam 1999, Problem A5.)
   
   \textit{Hint:} Apply \ref{equivalence-of-norms}.
 \end{problem}
@@ -86,8 +85,7 @@ It is my experience that proofs involving matrices can be shortened by 50\% if o
     But after integrating, the first term vanishes (by parts) so we are left with $\left( n(n+1) - m(m+1) \right) \int_{-1}^1 P_n P_m \, dx = 0$.  Since $m \neq n$, we have the desired orthogonality.
 \end{solution}
 
-\begin{problem}
-If $N$ is an $n$-by-$n$ matrix with columns $v_i$, then
+\begin{problem}\label{hadamard-inequality}If $N$ is an $n$-by-$n$ matrix with columns $v_i$, then
 \( \displaystyle\left| \det  N  \right| \leq \prod_{i=1}^n \norm{v_i}_2. \)
 This is \textbf{Hadamard's inequality.}  When is equality achieved?
 
