@@ -1,0 +1,175 @@
+\documentclass{homework}
+\course{Math 5520H}
+\author{Jim Fowler}
+\input{preamble}
+
+\begin{document}
+\maketitle
+
+\begin{inspiration}
+That's all well and good in practice, but how does it work in theory?
+\byline{Shmuel Weinberger}
+\end{inspiration}
+
+\section{Terminology}
+
+\begin{problem}
+  What is a field?
+\end{problem}
+
+\begin{problem}
+  What is a vector space?  What is a subspace?
+\end{problem}
+
+\begin{problem}
+  What is a basis?  What is an ordered basis?
+\end{problem}
+
+\begin{problem}\label{transpose-definition}What is the transpose of a matrix?
+\end{problem}
+
+\section{Numericals}
+
+\begin{problem}
+  Show that $\{ (2,1), (1,1) \}$ is a basis for $\R^2$.
+\end{problem}
+
+\begin{problem}\label{newton-interpolation}
+  Let $\mathcal{P}_{3}(\R)$ be polynomials (over $\R$) of degree $\leq 3$.  Verify that
+  \[ \left\{ \binom{x}{0}, \binom{x}{1}, \binom{x}{2}, \binom{x}{3} \right\} \]
+  spans $\mathcal{P}_{3}(\R)$.  This is \textbf{Newton interpolation.}
+\end{problem}
+
+\begin{problem}
+  Find two polynomials $p,q \in \mathcal{P}_{2}(\R)$ so that $\{p,q\}$ are linearly independent, but their derivatives $\{p',q'\}$ are linearly dependent.
+\end{problem}
+
+\begin{problem}
+  Find a matrix $A$ so that $(A^n)_{11} = 2^n$ and a matrix $B$ so that $(B^n)_{12} = n$.
+\end{problem}
+
+\begin{problem}
+  Find a square matrix $M$ so that $M^4 = 0$ but $M^3 \neq 0$.
+\end{problem}
+
+\begin{problem}\label{inverse-via-calculus}Recall from a calculus class that
+  $\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots$ when $x$ satisfies some
+  condition.  Bravely replace $x$ by a certain matrix in order to
+  invert
+  $\begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{pmatrix}$.
+\end{problem}
+
+\section{Exploration}
+
+\begin{problem}
+  Let $B = \{ b_1, \ldots, b_n \}$ be a basis for $V$.  Given a vector
+  $v \in V$, can you express $v$ as a linear
+  combination of the vectors in $B$?  In how many different ways?
+\end{problem}
+
+\begin{problem}\label{direct-sum-of-spaces}Given vector spaces $V$ and $W$, endow $V \times W$ with the
+  structure of a vector space.  (Write $V \oplus W$ for this
+  vector space.)
+\end{problem}
+
+\begin{problem}
+  What is $\dim \Mat_{n \times m}(\R)$?
+\end{problem}
+
+\begin{problem}
+  Let $S$ be the set of degree $\leq 3$ polynomials (with real
+  coefficients) which vanish at the point $2$, i.e.,
+  \[ S = \{ p \in \mathcal{P}_{3}(\R) : p(2) = 0 \}. \] Explain
+  why $S$ is a subspace of the vector space of polynomials
+  $\mathcal{P}(\R)$.  What is $\dim S$?
+\end{problem}
+
+\begin{problem}
+  Suppose a subspace $V \subset \R^n$ is spanned by
+  $\{v_1,\ldots,v_n\}$.  If you assemble these vectors together as the
+  rows of matrix, how does the rank of that matrix
+  (\ref{definition-rank}) relate to the dimension of $V$?  Does ``row
+  reducing'' help you find a basis for $V$?
+\end{problem}
+
+\begin{problem}\label{frobenius-matrix}A matrix $M$ is a \textbf{Frobenius matrix} if $M_{ii} = 1$, all
+  entries above the diagonal are zero, and with the exception of at
+  most one column all entries below the diagonal are zero.  An example is
+  \[\begin{pmatrix}
+      1&0&0&\cdots &0\\
+      0&1&0&\cdots &0\\
+      0&a_{32}&1&\cdots &0\\
+      \vdots &\vdots &\vdots &\ddots &\vdots \\
+      0&a_{n2}&0&\cdots &1
+    \end{pmatrix}.\]
+  Show that the inverse of a Frobenius matrix is again Frobenius.
+\end{problem}
+
+\begin{problem}
+  Find a function $f : \Mat_{2\times 2}(\R) \to \R$ so that, for all
+  $2$-by-$2$ matrices $A$ and $B$, we have $f(AB) = f(BA)$.
+\end{problem}
+
+\begin{problem}
+  For a finite dimensional subspace $V \subset \mathcal{P}(\R)$, the
+  set $V'$ consists of derivatives of the polynomials in $V$.  How do
+  $\dim V$ and $\dim V'$ relate?
+\end{problem}
+
+\section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}
+  The set of polynomials $\{ (1+x)^n : n \in \N \}$ is a basis for
+  $\mathcal{P}(\R)$.
+\end{problem}
+
+\begin{problem}\label{eventually-constant}Eventually constant functions form a subspace of the vector space of
+  all functions from $\R$ to $\R$.  (A function $f : \R \to \R$ is
+  eventually constant if there exists $a,b \in \R$ so that for all
+  $x \geq b$ we have $f(x) = a$.)
+\end{problem}
+
+\begin{problem}\label{sin-cos-indie}The set $\{ \sin, \cos \}$ is a linearly independent subset of the
+  vector space of $2\pi$-periodic square-integrable functions;
+  cf.~\ref{sin-cos-linear-system}.
+\end{problem}
+
+\begin{problem}
+  For a vector space $V$ and for finite sets $A, B \subset V$ with
+  $A \subset B$, if $A$ is linearly independent then $B$ is linearly
+  independent.
+\end{problem}
+
+\begin{problem}\label{steinitz-exchange-lemma}If the space $V$ is spanned by $S = \{v_1,\ldots,v_n\}$,
+  and the set $B = \{b_1,\ldots,b_m \} \subset V$ is linearly
+  independent, then $m \leq n$ and there is a subset $S' \subset S$
+  with $\# S' = n-m$ such that the set $B \cup S'$ spans $V$.
+\end{problem}
+
+\begin{problem}
+  Suppose $B$ and $B'$ are both bases for a finite dimensional vector
+  space $V$.  Then $\# B = \# B'$.
+\end{problem}
+
+\begin{problem}
+  Let $V = \{ (a_1,a_2,\ldots) : a_i \in \R \}$ be the vector space of
+  sequences of real numbers.  Define $e_j \in V$ by the rule
+  \[
+    (e_j)_i = \delta_{ij} = \begin{cases}
+      1 & \mbox{if $i = j$,} \\
+      0 & \mbox{if $i \neq j$.}
+    \end{cases}
+  \]
+  Then $\{ e_j : j \in \N \}$ spans $V$.
+\end{problem}
+
+\begin{problem}
+  The inverse of an upper triangular matrix is upper triangular.
+\end{problem}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
