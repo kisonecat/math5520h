@@ -92,6 +92,10 @@ In mathematics, existence is freedom from contradiction.
   operations.  Can you likewise transform $N$ into $M$?
 \end{problem}
 
+\begin{solution}
+  Yes: each of the row operations can be undone.
+\end{solution}
+
 \begin{problem}\label{exploration:quadrilateral-midpoints}
   A quadrilateral in the plane $\R^2$ has vertices $A$, $B$, $C$, and
   $D$.  Let $M_{\overline{AB}}$ be the midpoint of side
@@ -101,15 +105,37 @@ In mathematics, existence is freedom from contradiction.
   of polygon is it?
 \end{problem}
 
+\begin{solution}
+  Although the original quadrilateral may not be, this is a
+  parallelogram.
+\end{solution}
+
 \begin{problem}
   Write down a randomly chosen $2$-by-$2$ matrix $M$, and apply row
   operations to find a matrix $N$ in reduced row echelon form which is row
   equivalent to $M$.  What is likely true about $N$?
 \end{problem}
 
+\begin{solution}
+  A $2$-by-$2$ matrix is, generically, full rank.  Therefore $M$ is
+  expected to be the identity matrix.
+\end{solution}
+
 \begin{problem}
   When are two $2$-by-$2$ matrices row equivalent?
 \end{problem}
+
+\begin{solution}
+  The row space is a complete invariant.  
+  
+  To see why, first consider rank.  Two zero rank $2$-by-$2$ matrices
+  are row equivalent, and likewise two full rank $2$-by-$2$ matrices
+  are row equivalent.  This handles the cases in which the row space
+  is either zero or two dimensional.
+
+  The rank one case is more delicate.  Two rank one $2$-by-$2$
+  matrices are row equivalent if their row space is the same.
+\end{solution}
 
 \section{Prove or Disprove and Salvage if Possible}
 
@@ -120,6 +146,12 @@ In mathematics, existence is freedom from contradiction.
   $\mathcal{L}(N)$ is also $S$.
 \end{problem}
 
+\begin{solution}
+  This is true; to prove it, check that each of the various types of
+  row operations can be regarded as ``equation operations'' and do not
+  change the solution set.
+\end{solution}
+
 \begin{problem}
   Let $M$ and $N$ be matrices which both have $c$ columns, and further
   let $S$ and $T$ be the solution set associated with $\mathcal{L}(M)$
@@ -128,47 +160,108 @@ In mathematics, existence is freedom from contradiction.
     N \end{pmatrix}$ has solution set $S \cup T$.
 \end{problem}
 
+\begin{solution}
+  The typo here is  $S \cup T$.  Instead, the solution set is $S \cap T$.
+\end{solution}
+
 \begin{problem}
   There exists a nonzero matrix which is row equivalent to the zero matrix.
 \end{problem}
 
+\begin{solution}
+  This is incorrect; if $M$ is equivalent to the zero matrix, then row operations can be reversed and applied to transform the zero matrix into $M$.  But each of the various types of row operations, applied to the zero matrix, result in the zero matrix.
+\end{solution}
+
 \begin{problem}
   There exists a matrix $M$ so that the solution set to $\mathcal{L}(M)$ is empty.
 \end{problem}
+
+\begin{solution}
+  ``Empty'' should read ``is the set containing only the zero
+  vector.''  Then any matrix with trivial kernel is an example.
+\end{solution}
 
 \begin{problem}
   Suppose two $m$-by-$n$ matrices $A$ and $B$ have the same rank.
   Then $A$ and $B$ are row equivalent.
 \end{problem}
 
+\begin{solution}
+  There are various salvages here.  For instance, if $A$ and $B$ are
+  square full rank, then $A$ and $B$ are row equivalent.  Another
+  salvage is to demonstrate just how wrong this is, perhaps by
+  exhibiting infinitely many $2$-by-$2$ rank one matrices which are
+  not row equivalent.
+\end{solution}
+
 \begin{problem}
   There exists a non-identity matrix which is row equivalent to the identity
   matrix.
 \end{problem}
 
+\begin{solution}
+  This is true; apply almost any row operation to the identity matrix
+  to produce such.
+\end{solution}
+
 \begin{problem}
   For every $0 \leq n \leq m$ there exists an $m$-by-$m$ matrix of rank $n$.
 \end{problem}
+
+\begin{solution}
+  An $m$-by-$m$ diagonal matrix with $n$ ones and $m-n$ zeroes down
+  the diagonal is an example of such.
+\end{solution}
 
 \begin{problem}
   There exists a symmetric matrix which is row equivalent to a matrix which
   is not symmetric.
 \end{problem}
 
+\begin{solution}
+  This is true; start with the identity matrix, and add a nonzero
+  multiple of one row to another.
+\end{solution}
+
 \begin{problem}
   A $3$-by-$3$ matrix is the sum of three rank $1$ matrices.
 \end{problem}
+
+\begin{solution}
+  In fact, every matrix with $n$ rows is a sum of $n$ rank one
+  matrices.
+\end{solution}
 
 \begin{problem}
   An $n$-by-$n$ matrix with all entries equal to 1 has rank $n$.
 \end{problem}
 
+\begin{solution}
+  Rather, an $n$-by-$n$ matrix with all entries equal to 1 has rank
+  $1$, because it is row equivalent to a matrix with a single row of
+  all ones.
+\end{solution}
+
 \begin{problem}
   The sum of rank $n$ matrices has rank $n$.
 \end{problem}
 
+\begin{solution}
+  One possible salvage is that the sum of rank $n$ can have arbitrary
+  rank.  To demonstrate this, add the identity matrix (which has rank
+  $n$) to a matrix with $1$'s and $-1$'s down the diagonal.
+\end{solution}
+
 \begin{problem}
   Every diagonal matrix is a scalar multiple of the identity matrix.
 \end{problem}
+
+\begin{solution}
+  The matrix $\begin{bmatrix} 1 & 0 \\ 2 & 0 \end{bmatrix}$ is
+  diagonal but not a multiple of the identity matrix.  A perhaps not
+  very interesting salvage is to observe that only ``some'' diagonal
+  matrices (say a one dimensional family) are scalar multiples of the
+  identity.
+\end{solution}
 
 \end{document}
