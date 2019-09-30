@@ -96,7 +96,7 @@
 \def\endsuppress{\par\endgroup}
 \makeatother
 
-\renewenvironment{solution}{\suppress}{\endsuppress}
+%\renewenvironment{solution}{\suppress}{\endsuppress}
 
 \usepackage{nopageno}
 
