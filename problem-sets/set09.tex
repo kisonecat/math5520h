@@ -1,0 +1,131 @@
+\documentclass{homework}
+\course{Math 5520H}
+\author{Jim Fowler}
+\input{preamble}
+
+\begin{document}
+\maketitle
+
+\begin{inspiration}
+It is my experience that proofs involving matrices can be shortened by 50\% if one throws the matrices out.
+\byline{Emil Artin in \textit{Geometric Algebra}}
+\end{inspiration}
+
+\section{Terminology}
+
+\begin{problem}\label{definition-adjoint}What is the adjoint of a linear transformation?  Compare the adjoint
+  to the transpose of a matrix, which we defined in
+  \ref{transpose-definition}.
+\end{problem}
+
+\begin{problem}
+  What is a norm?  What does it mean to say two norms are equivalent?
+\end{problem}
+
+\begin{problem}
+  What is a Hermitian matrix?  A unitary matrix?  An orthogonal matrix?
+\end{problem}
+
+\section{Numericals}
+
+\begin{problem}\label{legendre-inner-product}Start with the basis $\{1,x,x^2,x^3\}$ of degree $\leq 3$
+  polynomials and apply \textbf{Gram-Schmidt} with the inner product
+  \begin{equation}\label{polynomial-inner-product}\tag{$*$}
+    \langle f,g \rangle = \int_{-1}^1 f(x) \, g(x) \, dx
+  \end{equation}
+  to find some \textbf{orthogonal polynomials}.  
+\end{problem}
+
+\begin{problem}
+  Using the inner product \eqref{polynomial-inner-product} and working relative to the ordered basis $\mathcal{B} = (1,x)$, the derivative $D$ is represented by  $[D]_{\mathcal{B}} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$, so $\left( [D]_{\mathcal{B}}\right)^\transpose = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}$.  Since $\left( [D]_{\mathcal{B}}\right)^\transpose = [D^\star]_{\mathcal{B}}$, we conclude that $D^\star(1) = x$.  But $\langle D x, 1 \rangle = 2$ which does not equal $\langle x, D^\star 1 \rangle = \langle x, x \rangle = 2/3$. 
+  Where did I make a mistake?
+\end{problem}
+
+\begin{problem}
+  Prove that there is a constant $C > 0$  such that,  if  $p(x)$  is a polynomial of degree 1999,  then  $|p(0)| \leq C \displaystyle\int_{-1}^1 \left|p(x)\right| \, dx$. (Credit: Putnam 1999, Problem A5.)
+  
+  \textit{Hint:} Apply \ref{equivalence-of-norms}.
+\end{problem}
+
+\section{Exploration}
+
+\begin{problem}
+  We have seen that an inner product $\langle \cdot,\cdot\rangle$
+  gives rise to a norm $\norm{\cdot}$ via
+  $\norm{v} = \sqrt{\langle v, v \rangle}$.  What about the other way?
+  Given a norm, can we find a compatible inner product?
+
+  Suppose the norm satisfies the \textbf{parallelogram law} meaning
+  $2 \norm{u}^2 + 2 \norm{v}^2 = \norm{u+v}^2 + \norm{u-v}^2$.
+  Then via a so-called \textbf{polarization identity} define \[
+    \langle x, y\rangle = \frac{1}{4} \left( \norm{x+y}^2 - \norm{x-y}^2 \right).
+  \]
+  Verify that $\langle x, y\rangle$ is \textbf{bilinear.}
+\end{problem}
+
+\begin{problem}
+  In \ref{wave-equation-orthogonal}, we considered the inner product
+  \( \langle f,g \rangle =
+    \displaystyle\int_0^{2\pi} f(x) \, g(x) \, dx = 0. \)
+  Let $V$ be the vector space of $2\pi$-periodic smooth functions, and show that $\frac{d^2}{dx^2}$ is a self-adjoint operator on $V$.  Prove that the eigenfunctions with distinct eigenvalues are orthogonal, and that the eigenvalues are real.
+\end{problem}
+
+\begin{problem}\label{legendre-orthogonal}Show that the Legendre polynomials (\ref{legendre-polynomials}) are orthogonal with respect to the inner product \eqref{polynomial-inner-product}.
+\end{problem}
+
+\begin{problem}\label{hadamard-inequality}If $N$ is an $n$-by-$n$ matrix with columns $v_i$, then
+\( \displaystyle\left| \det  N  \right| \leq \prod_{i=1}^n \norm{v_i}_2. \)
+This is \textbf{Hadamard's inequality.}  When is equality achieved?
+
+(Incidentally, according to this bound, the matrix in \ref{very-small-determinant} has determinant $\leq 0.061$, but you found the determinant was \textit{much} smaller.)
+\end{problem}
+
+\section{Prove or Disprove and Salvage if Possible}
+
+\begin{problem}
+  The sum of self-adjoint operators (on finite dimensional complex vector spaces) is self-adjoint.
+\end{problem}
+
+\begin{problem}\label{cauchy-schwarz-application}For $2\pi$-periodic smooth functions $f$ and $g$,
+  \[
+    \left( \int_{0}^{2\pi} f(x) \, g(x) \, dx  \right)^2 \leq
+    \int_{0}^{2\pi} \left| f(x) \right|^2 \, dx
+    \int_{0}^{2\pi} \left| g(x) \right|^2 \, dx.
+  \]
+\end{problem}
+
+\begin{problem}
+  Every orthonormal subset of $V$ can be extended to an orthonormal basis.
+\end{problem}
+
+\begin{problem}\label{schur-decomposition}If $A$ is an $n$-by-$n$ square matrix, then there exists a unitary matrix $Q$ and an upper triangular matrix $U$ so that $A = QUQ^{-1}$.  This is the \textbf{Schur decomposition}: ``there is an orthonormal basis in which the matrix is upper-triangular.''
+\end{problem}% salvage by stating complex
+
+\begin{problem}\label{qr-decomposition}If $A$ is an $n$-by-$n$ square matrix with real entries, then there exists an orthogonal matrix $Q$ and an upper triangular matrix $R$ so that $A = QR$.
+\end{problem}
+
+\begin{problem}\label{transitivity-of-equivalence-of-norms}If $\norm{\cdot}_a$ is equivalent to $\norm{\cdot}_b$ and $\norm{\cdot}_b$ is to $\norm{\cdot}_c$, then $\norm{\cdot}_a$ and $\norm{\cdot}_c$ are equivalent. % I wrote this weirdly just so it fits on one line
+\end{problem}
+
+\begin{problem}\label{equivalence-of-norms}Every norm $\norm{\cdot}$ on a vector space $V$ over $\R$ is equivalent to $\norm{\cdot}_1$.
+\end{problem}%salvage with finite dimensional
+
+\begin{problem}
+  If $f : V \to k$ is a linear functional on the finite dimensional inner product space $V$, then there exists a unique $w \in V$ such that $f(v) = \langle v, w \rangle$.
+\end{problem}
+
+\begin{problem}
+  The map $q \mapsto q(0)$ is a linear functional, so there is a
+  polynomial $p$ so that for every polynomial $q$,
+  \[
+    q(0) = \langle p, q \rangle = \int_{-1}^1 p(x) \, q(x) \, dx.
+  \]
+\end{problem}%salvage with a degree bound
+
+\begin{problem}
+If $T$ is self-adjoint, then $e^{iT}$ is unitary.  (This supports our analogy that self-adjoint is akin to ``real'' and for $x \in \R$ we have $|e^{ix}| = 1$..) 
+\end{problem}
+
+
+
+\end{document}
