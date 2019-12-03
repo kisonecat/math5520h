@@ -1,0 +1,139 @@
+\documentclass{homework}
+\course{Math 5520H}
+\author{Jim Fowler}
+
+\DeclareMathOperator{\Ai}{Ai}
+\DeclareMathOperator{\Bi}{Bi}
+
+\begin{document}
+\maketitle
+
+\begin{inspiration}
+They discover by this kind of experience that what they really wanted is usually not some collection of ``answers'' --- what they want is understanding.
+\byline{William Thurston, \textit{On proof and progress in mathematics}}
+\end{inspiration}
+
+\section{Terminology}
+
+\begin{problem}
+  What is a positive operator?
+\end{problem}
+
+\begin{problem}
+  What is a Sturm-Liouville problem?  A \textit{regular} Sturm-Liouville problem?
+\end{problem}
+
+\begin{problem}
+  What is a Green's function?
+\end{problem}
+
+\section{Numericals}
+
+\begin{problem}
+  Multiply by $1/x$ to put $x^2 y'' + xy' + \lambda y = 0$  into Sturm-Liouville form.
+\end{problem}
+
+\begin{problem}\label{wave-with-fixed-endpoints}Find the eigenfunctions and eigenvalues of the boundary value problem
+  \begin{align*}
+    y(x)'' &= - \lambda y(x) \mbox{ for $x \in [a,b]$,} \\
+    y(a) &= y(b) = 0.
+  \end{align*}
+  Is there a smallest eigenvalue?  A largest eigenvalue?  How many
+  eigenvalues are there?
+\end{problem}
+
+\section{Exploration}
+
+\begin{problem}\label{raleigh-quotients}Let $M : V \to V$ be a Hermitian operator on an $n$-dimensional
+  space, with eigenvalues $\lambda_i \in \R$ arranged in order so that
+  $y_1 \leq y_2 \leq \cdots \leq \lambda _n$.
+
+  For $x \in V$, define the \textbf{Rayleigh quotient} by
+  \[R(M,x)=\frac{\langle x, Mx \rangle}{\langle x, x \rangle}.\]
+  Invoke the Spectral Theorem to show that
+  $\lambda_1 \leq R(M,x) \leq \lambda_n$.  (This extends
+  \ref{spectral-theorem-via-maxima}.)
+\end{problem}
+
+\begin{problem}\label{pi-squared-less-than-ten}Multiply $Ly = -\lambda y$ by $y$ and integrate to find
+  \[
+    \lambda = \frac{ -\displaystyle\int_a^b \left( y (p y')' - q y^2  \right) \, dx }{\displaystyle\int_a^b y^2 \, dx},
+  \]
+  which, after integrating by parts, yields the Rayleigh quotient
+  \[
+    R(L,y) =  {\frac {\left(\left.-p(x)y(x)y'(x)\right|_{a}^{b}\right)+\left(\displaystyle\int _{a}^{b}\left(p(x)y'(x)^{2}-q(x)y(x)^{2}\right)\,dx\right)}{\displaystyle\int _{a}^{b}{y(x)^{2}}\,dx}}.
+  \]
+  By \ref{raleigh-quotients}, $R(L,y)$ overestimates the smallest eigenvalue.
+
+  Solve \ref{wave-with-fixed-endpoints} with $a = 0$ and $b = 1$, meaning $y'' = -\lambda y$ subject to $y(0) = y(1) = 0$.  What is the smallest eigenvalue $\lambda_1$ in this case?
+
+  Picking $y = x - x^2$, we find $y$ is not an eigenfunction, but in this case
+  \[
+   R(L,y) = \frac{\displaystyle\int_0^1 y'(x)^2 \, dx}{\displaystyle\int _{0}^{1}{y(x)^{2}}\,dx} = 10.
+ \]
+ Is it the case that $10 \geq \lambda_1$?  (I find this fact helpful in mid-March each year.)
+\end{problem}
+
+\begin{problem}
+  Use the method of \ref{pi-squared-less-than-ten} to show that if
+  \[
+    \left( (1+x^{2}) y' \right)' =  -\lambda y \mbox{ and } y(0) = y(1) = 0,
+  \]
+  then $\lambda \geq 0$.  Can you also show that $\lambda \neq 0$?
+\end{problem}
+
+\begin{problem}
+  Recall the Airy functions (\ref{introduction-airy-function}) which
+  we'll denote $\Ai$ and $\Bi$.  Note that $y(x) = \Ai(x - \lambda)$
+  and $y(x) = \Bi(x-\lambda)$ are solutions to
+  $y'' + (\lambda - x) y = 0$.
+
+  For certain $\lambda$, it is possible to find $\alpha$ and $\beta$ so that
+  \[
+    y(x) = \alpha \Ai(x - \lambda) + \beta \Bi(x - \lambda)
+  \]
+  is a solution to $y'' + (\lambda - x) y = 0$ and satisfies
+  $y(0) = y(1) = 0$.  Note that the boundary conditions are the
+  challenge here!  Find a reasonably good upper bound on the smallest
+  such $\lambda$.
+
+  You can check your estimate with the SageMath command
+\begin{verbatim}
+find_root( lambda x: airy_ai(1-x)*airy_bi( -x)-
+                     airy_ai( -x)*airy_bi(1-x), 
+           0, 20)
+\end{verbatim}
+\end{problem}
+
+
+\section{Prove or Disprove and Salvage if Possible}
+%http://www.math.iitb.ac.in/~siva/ma41707/ode7.pdf
+
+\begin{problem}
+  If $\lambda$ is an eigenvalue of a regular Sturm-Lioville boundary
+  value problem, then $\lambda \in \R$.
+\end{problem}
+
+\begin{problem}
+  With respect to the inner product
+    \[ % missing weight
+      \langle f, g \rangle = \displaystyle\int_a^b f(x) \, \overline{g(x)} \, dx,
+    \]
+    eigenfunctions of a regular Sturm-Liouville problem on $[a,b]$
+    corresponding to different eigenvalues are orthogonal.
+\end{problem}
+
+\begin{problem}
+  Let $y_1$ and $y_2$ be two eigenfunctions of a regular
+  Sturm-Lioville boundary value problem.  If $y_1$ and $y_2$
+  correspond to the same eigenvalue, then $y_1$ is a multiple of
+  $y_2$.
+\end{problem}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
