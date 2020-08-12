@@ -1,0 +1,45 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Uniqueness of solutions}
+\date{Monday, September 9, 2019}
+\DeclareMathOperator{\Image}{Im}
+\begin{document}
+\maketitle
+
+Our primary goal is to show that if $y'' + ay' + by = 0$ and
+$y(0) = y'(0) = 0$, then $y$ is identically zero.
+
+\begin{problem}
+Show that
+\[
+  |y(t)| = |b| \int_0^{t} |y(u)| \, du + |c| \int_0^{t} \int_0^u |y(s)| \, ds \, du.
+\]
+\end{problem}
+
+\vfill
+
+\begin{problem}
+Show that for $t \in [-T,T]$, we have an $M > 0$ so that
+\[
+  |y(t)| = |b| M |t| + |c| M (t^2/2)
+\]
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  By choosing $T$ appropriately, ensure $M \leq (1/2) M$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Apply the above to $z(t) = y(t + T/2)$.
+\end{problem}
+
+\vfill
+
+\end{document}

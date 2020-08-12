@@ -1,0 +1,63 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Equivalence of norms}
+\date{Wednesday, October 23, 2019}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}
+\maketitle
+
+Throughout, $V$ is a finite dimensional vector space with basis $(e_i)_i$.
+
+\begin{problem}
+  What is meant by a \textbf{norm} on $V$?  Denote this norm by $\norm{-}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  What is meant by saying a norm $\norm{-}'$ is \textbf{equivalent} to the norm $\norm{-}$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Equivalence of norms is transitive.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Is it always the case that $\norm{v} = \langle v, v \rangle$ for some inner product $\langle -, - \rangle$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $v = \sum v_i e_i$.   Define $\norm{\vec{v}}_1 := \sum_i |v_i|$.  Verify that this is a norm on $V$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Suppose $V$ is topologized using the norm $\norm{-}_1$.  Then function $\norm{-} : V \to \mathbb{R}$ is continuous.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  To show $\norm{-}$ is equivalent to $\norm{-}'$, it is enough to find constants $m$ and $M$ so that for all $v \in v$ with $\norm{v}' = 1$ we have
+  \[
+    m \leq \norm{v} \leq M.
+  \]
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Conclude that all norms are equivalent.
+\end{problem}
+
+\end{document}

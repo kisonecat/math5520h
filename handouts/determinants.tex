@@ -1,0 +1,99 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Determinants}
+\date{Tuesday, October 8, 2019}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\adj}{adj}
+\begin{document}
+\maketitle
+
+\section{Laplace expansion}
+
+\begin{problem}
+  For an $n$-by-$n$ matrix $M = (m_{ij})$, what is the $(i,j)$-\textbf{minor}? \\
+  Denote it by $M_{ij}$.
+\end{problem}
+
+\begin{problem}  
+  For some fixed $j$, verify $\det M = \sum_{i=1}^n m_{ij} (-1)^{i+j} M_{ij}$.
+\end{problem}
+
+\section{Computations}
+
+\begin{problem}
+  Compute $\det(M^{\textsf{T}})$.
+\end{problem}
+
+\begin{problem}
+  Compute $\det(\lambda M)$.
+\end{problem}
+
+\begin{problem}
+  Use $\det(AB) = (\det A) \cdot (\det B)$ to explain how to compute
+  $\det$ via row reduction.
+\end{problem}
+
+\begin{problem}
+  For every $n$-by-$n$ matrix $M$, is there is an $n$-by-$n$ matrix $S$
+  so that $SMS^{-1}$ is upper triangular?  (Does the field $k$ matter?)
+\end{problem}
+
+\begin{problem}
+  Compute $\det M$ in terms of $\det \left( SMS^{-1} \right)$.
+\end{problem}
+
+\begin{problem}
+  For every square matrix $M$, does there exist a lower triangular
+  matrix $L$ and an upper triangular matrix $U$ so that $M = LU$? % if M is invertible!
+\end{problem}
+
+\begin{problem}
+  For a large matrix $M$, how might you compute $\det M$?
+\end{problem}
+
+\section{Cayley-Hamilton}
+
+\begin{problem}
+  The \textbf{characteristic polynomial} $p$ of a matrix $M$ is
+  \[
+    p(\lambda) = \det(M - \lambda I).
+  \]
+  The \textbf{Cayley-Hamilton theorem} states $p(M) = 0$.
+
+  By replacing $\lambda$ with $M$, we note that
+  \[
+    p(M) = \det(M - M \cdot I) = \det 0 = 0.
+  \]
+  What is wrong with this ``proof'' of Cayley-Hamilton?
+\end{problem}
+
+\begin{problem}
+  Suppose $SMS^{-1}$ is diagonal, and let $p$ be the characteristic polynomial of $M$.  Verify $p(M) = 0$.
+\end{problem}
+
+\begin{problem}
+  Diagonalizable matrices are dense in $\Mat_{n \times n}(\mathbb{C})$.
+\end{problem}
+
+\begin{problem}
+  Is the map $M \mapsto p(M)$ continuous?
+\end{problem}
+
+\section{Finding inverses}
+
+\begin{problem}
+  For $M = (m_{ij})$ with minors $M_{ij}$, define $C = (c_{ij})$ by
+  the rule $c_{ij} = (-1)^{i+j} M_{ij}$.  This is the \textbf{cofactor
+    matrix}.  Compute $MC^{\textsf{T}}$.
+\end{problem}
+
+\begin{problem}
+  Define the \textbf{adjugate} of $M$ to be $\adj(M) = C^{\textsf{T}}$.
+    How does $\adj(M)$ relate to $M^{-1}$?
+\end{problem}
+
+
+\end{document}

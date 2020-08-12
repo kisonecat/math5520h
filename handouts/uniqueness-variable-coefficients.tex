@@ -1,0 +1,55 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Uniqueness of solutions}
+\date{Wednesday, October 16, 2019}
+\DeclareMathOperator{\Image}{Im}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\begin{document}
+\maketitle
+
+We consider the differential equation $\mathbf{y}' = A(x) \mathbf{y}$ with initial data $\mathbf{y}(0) = \mathbf{y}_0$.
+
+\begin{problem}
+Define $f(x) = \norm{\mathbf{y}(x)}^2$.  What does $\norm{-}$ mean?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  % Verify $f'(x) = \langle \mathbf{y}'(x), \mathbf{y}(x) \rangle + \langle \mathbf{y}(x), \mathbf{y}'(x) \rangle = 2 \langle \mathbf{y}'(x), \mathbf{y}(x) \rangle$
+  Compute $f'(x)$ in terms of the inner product $\langle -,- \rangle$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  By Cauchy-Schwarz, $\left| f'(x) \right| \leq 2 \norm{ \mathbf{y} } \cdot \norm{ A(x) \mathbf{y} }$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  There exists a $B$ so that.
+  $\left| f'(x) \right| \leq B f(x)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For all $x$, we have the inequality $\norm{ \mathbf{y}_0 }^2 e^{-Bx } \leq \norm{ \mathbf{y}(x) }^2 \leq \norm{ \mathbf{y}_0 }^2 e^{B x}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Formulate and prove a uniqueness theorem for differential equations of the form
+  \[ y^{(n)} + a_{n-1}(x) y^{(n-1)} + \cdots + a_0(x) y = 0. \]
+
+\end{problem}
+
+\vfill
+
+\end{document}

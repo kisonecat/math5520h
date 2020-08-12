@@ -1,0 +1,79 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Nonhomogeneous equations}
+\date{Wednesday, October 17, 2019}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\trace}{tr}
+\begin{document}
+\maketitle
+
+We wish to find a function $y$ satisfying
+\[ y^{(n)} + a_{n-1}(x) y^{(n-1)} + \cdots + a_0(x) y = b(x). \]
+We repackage this as $\mathbf{y}' = A(x) \mathbf{y} + \mathbf{b}(x)$.
+
+\begin{problem}
+  Let $Y$ be an $n$-by-$n$ matrix of solutions to the homogeneous
+  problem, i.e., the columns of $Y$ form a basis for solutions to
+  $\mathbf{y}' = A(x) \mathbf{y}$.
+
+  Then every solution to $\mathbf{y}' = A(x) \mathbf{y}$ is $Y \mathbf{c}$ for some vector $\mathbf{c}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  %Choose $Y$ so that $Y(x_0)$ is the identity.
+  What $\mathbf{c}$ should be used to solve
+  $\mathbf{y}' = A(x) \mathbf{y}$ with
+  $\mathbf{y}(x_0) = \mathbf{y}_0$?  What would be a good choice for
+  $Y(x_0)$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Perform \textbf{variation of parameters} by replacing $\mathbf{c}$
+  with a function $\mathbf{c}(x)$.
+  
+  Set $\mathbf{y}(x) = Y \cdot \mathbf{c}(x)$ in
+  \[ \mathbf{y}' = A(x) \mathbf{y} + \mathbf{b}(x),
+  \]
+  and deduce $Y \mathbf{c}'(x) = \mathbf{b}(x)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  %Solve $Y \mathbf{c}'(x) = \mathbf{b}(x)$ via Cramer's rule.
+  Explain why $\mathbf{c}_i(x)$ is
+  \[
+    \int_{x_0}^x \frac{W(\varphi_1,\ldots,\varphi_{i-1},\mathbf{b},\varphi_{i+1},\ldots,\\\varphi_n)(t)}
+    {W(\varphi_1,\ldots,\varphi_n)(t)} \, dt.
+  \]
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Suppose $\varphi_1$ and $\varphi_2$ are solutions to
+  \[
+    y'' + a_1(x) \, y' + a_0(x) \, y = 0.
+  \]
+  Then a solution to
+  \[
+    y'' + a_1(x) \, y' + a_0(x) \, y = b(x)
+  \]
+  is
+  \[
+    y(x) = \int_{x_0}^x \frac{\varphi_1(t) \, \varphi_2(x) \, b(t) -\varphi_1(x) \, \varphi_2(t) \, b(t)}{W(\varphi_1,\varphi_2)(t)} \, dt.
+  \]
+\end{problem}
+
+\vfill
+
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Exterior algebra}
+\date{Tuesday, October 8, 2019}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\trace}{tr}
+\begin{document}
+\maketitle
+
+\section{Finding inverses}
+
+\begin{problem}
+  For $M = (m_{ij})$ with minors $M_{ij}$, define $C = (c_{ij})$ by
+  the rule $c_{ij} = (-1)^{i+j} M_{ij}$.  This is the \textbf{cofactor
+    matrix}.  Compute $MC^{\textsf{T}}$.
+\end{problem}
+
+\begin{problem}
+  Define the \textbf{adjugate} of $M$ to be $\adj(M) = C^{\textsf{T}}$.
+    How does $\adj(M)$ relate to $M^{-1}$?
+\end{problem}
+
+\section{Cramer's rule}
+
+\begin{problem}
+  For $M \in \Mat_{n \times n}(k)$ and $b \in k^n$, define $M_i$ to be
+  $M$ but with column $i$ replaced by $b$.
+
+  Define $x \in k^n$ via $x_i = \det M_i / \det M$ and check that
+  $Mx = b$.
+\end{problem}
+
+\section{Jacobi's formula}
+
+\begin{problem}
+  For $A \in \Mat_{n \times n}(k)$, if $f(x) = \det(I+xA)$, then $f'(0) = \trace A$.  (Recall S07P20.)
+\end{problem}
+
+\begin{problem}
+  For $A \in \Mat_{n \times n}(k)$ and $B \in \GL_{n}(k)$, set $g(x) = \det(B+xA)$.  Show $g'(0) = (\det B) \cdot \tr (B^{-1} A)$.
+\end{problem}
+% this is done via $g(x) = \det(B + xA) = det(B) det(I + xB^{-1} A)$
+
+\begin{problem}
+  For some function $f : \R \to \Mat_{n \times n}(k)$, show that
+  \[
+    \frac{d}{dt} \det f(t) = \trace \left( \adj A \cdot f'(t) \right).
+  \]
+\end{problem}
+
+\begin{problem}
+  Show $\det e^{tA} = e^{\trace tA}$.  (Recall S06P14.)
+\end{problem}
+
+\end{document}

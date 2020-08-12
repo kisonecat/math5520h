@@ -1,0 +1,134 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Integral operators}
+\date{November 19, 2019}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+As expected, consider the operator $L$ defined by
+\[
+  Ly = \frac{d}{dx} \left( p(x) \, \frac{dy}{dx} \right) - q(x) \, y.
+\]
+with $p(x) > 0$ on $[a,b]$.
+
+\begin{problem}
+  Suppose $y(a) = y(b) = 0$ and compute $\langle -L y, y \rangle$.
+\end{problem}
+
+\begin{problem}
+  What can be said about the eigenvalues of $L$?
+\end{problem}
+
+\begin{problem}
+  Recall that we built a \textbf{Green's function} $G$ and defined $(Ty)(f) = \int_a^b G(x,t) \, f(t)  \, dt$ so that $LTf = f$ and $TLf = f$.  What are the domains of $L$ and $T$?
+\end{problem}
+
+\begin{problem}
+  How do eigenvalues of $T$ relate to eigenvalues of $L$?
+\end{problem}
+
+\begin{problem}
+  There exists $M \in \mathbb{R}$ so that $|Tf(x)|^2 \leq M \cdot (b-a) \cdot \| f \|^2$.
+\end{problem}
+
+\begin{problem}
+  Define $B = \{ Tu \}$ where $u : [a,b] \to \R$ is continuous and
+  $\|u\| \leq 1$.  Show that $B$ is uniformly bounded.
+\end{problem}
+
+%\begin{problem}
+%  For continuous $f : [a,b] \to \R$ and %$\epsilon > 0$, find $\delta > 0$ so that $d(x_1,x_2) < \delta$ implies $d(Tf(x_1),Tf(x_2)) < \epsilon$.
+%\end{problem}
+
+\begin{problem}
+  Show that $B$ is equicontinuous.
+\end{problem}
+
+\begin{problem}
+  What is a statement of the \textbf{Arzela-Ascoli} theorem?
+\end{problem}
+
+\begin{problem}
+  Define the \textbf{operator norm} $\| - \|$.
+\end{problem}
+
+\begin{problem}
+  For $\|f\|=1$, show $\left| \langle Tf, f \rangle \right| \leq \|T\|$.
+\end{problem}
+
+\begin{problem}
+  Let $R = \sup_{\|f\|=1} \left| \langle Tf, f \rangle \right|$.  For functions $f$ and $g$,
+  \begin{align*}
+2 \langle Tf,g \rangle
+&= \frac{1}{2} \langle T(f+g),f+g \rangle - \langle T(f-g),f-g \rangle \\
+    &\leq \frac{R}{2} ( \|f+g\|^2 + \|f-g\|^2 ) = R(\|f\|^2 + \|g\|^2).
+  \end{align*}
+  Setting $g = \frac{\|f\|}{\|Tf\|} Tf$ implies what?
+\end{problem}
+
+\begin{problem}
+  Either $\|T\| = \sup_{\|f\|=1} \langle Tf, f \rangle$ or  $\|T\| = -\inf_{\|f\|=1} \langle Tf, f \rangle$.
+\end{problem}
+
+\begin{problem}
+  In what follows, suppose $\|T\| = \sup_{\|f\|=1} \langle Tf, f \rangle$.  Find a sequence $f_n \in C([a,b])$ with $\|f_n\|=1$ and $\lim_{n \to \infty} \langle Tf_n,f_n \rangle = \|T\|$ and for which $(Tf_n)$ converges; define $f := \lim_{n \to \infty} (Tf_n)$.
+\end{problem}
+
+\begin{problem}
+  Verify that
+  \[
+    \| Tf_n - \|T\| f_n \|^2 =
+    \| Tf_n \|^2 + \|T\|^2 - 2 \langle Tf_n,  \|T\| f_n \rangle,
+  \]
+  so $\lim_{n \to \infty} \| Tf_n - \|T\| f_n \|^2 = \|f\|^2 - \|T\|^2$, and so $f \not\equiv 0$.
+\end{problem}
+
+\begin{problem}
+  Use the fact that $\|Tf_n\|^2 \leq \|T\|^2$ and therefore that
+  \[
+    \| Tf_n - \|T\| f_n \|^2 \leq
+    2 \|T\|^2 - 2 \|T\|
+     \langle Tf_n,   f_n \rangle,
+   \]
+   to compute $\lim_{n \to \infty} \| Tf_n - \|T\| f_n \|^2$.
+\end{problem}
+
+\begin{problem}
+  Show $0 \leq \| Tf - \|T\|f \| \leq \| Tf - T(Tf_n) \| + \| T(Tf_n) - \|T\| Tf_n \| + \| \|T\| Tf_n - \|T\| f \|$.
+\end{problem}
+
+\begin{problem}
+  There is an eigenfunction $f$ with eigenvalue $\| T \|$.
+\end{problem}
+
+\end{document}
+
+\begin{problem}
+  Define $T_1 f = Tf - \langle f, \varphi_0 \rangle (T\varphi_0)$ and note
+  \[
+    T_1 f = \int_a^b G_1(x,t) f(t) \, dt
+  \]
+  where $G_1(x,t) = G(x,t) - \mu_0 \varphi_0(x) \overline{\varphi_0(t)}$.
+
+  Find a normalized eigenfunction $\varphi_1$ of $T_1$.
+\end{problem}
+
+\begin{problem}
+  Show $\langle \varphi_1, \varphi_0 \rangle = 0$.
+\end{problem}
+
+\begin{problem}
+  The operator $T$ admits an infinite sequence of orthonormal eigenfunctions.
+\end{problem}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

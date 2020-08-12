@@ -1,0 +1,110 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Normal operators}
+\date{Tuesday, September 24, 2019}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\image}{im}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}
+\maketitle
+
+As usual, $V$ is a finite dimensional inner product space over the
+complex numbers.
+
+\begin{problem}
+  What does it mean to say an operator $f : V \to V$ is \textbf{normal}?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Suppose there is an orthonormal basis $\mathcal{B} = (\vec{e}_1, \ldots, \vec{e}_n)$ so that $[f]_{\mathcal{B}}$ is diagonal.  Show that $f$ is normal.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  There are normal operators for which the eigenvalues are not real.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $f$ is normal, then $\norm{f(\vec{v})} = \norm{f^\star(\vec{v})}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $f$ is normal, $\ker f = \ker f^\star$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $f$ is normal, then $\ker f = (\image f)^\perp$.
+%  The kernel of a normal operator is the orthogonal complement of its range.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Eigenvectors of $f$ corresponding to distinct eigenvalues are orthogonal.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $f$ is normal, $\image f = \image f^\star$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  By Schur, there is an orthonormal basis $\mathcal{B} = (\vec{e}_1, \ldots, \vec{e}_n)$ so that $[f]_{\mathcal{B}} = \left( f_{ij} \right)$ is upper triangular.  Compare $\norm{f(\vec{e}_1)}$ and $\norm{f^\star(\vec{e}_1)}$ to deduce that many of these entries are zero.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $\vec{v} \in \ker f^{N+1}$ and compute
+  $\langle f^\star(f^N(\vec{v})), f^{N-1}(\vec{v}) \rangle$ to conclude $\vec{v} \in \ker f^N$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $f$ is normal, then $\ker f = \ker f^N$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  What can be said about the generalized eigenvectors of a normal operator?
+\end{problem}
+
+\vfill
+
+\end{document}
+
+\begin{problem}
+  The operator $f$ is self-adjoint iff for all $\vec{v} \in V$ we have $\langle f(\vec{v}),\vec{v} \rangle \in \mathbb{R}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If for all $\vec{v} \in V$ we have $\langle f(\vec{v}, \vec{v} \rangle = 0$, then $f = 0$.
+\end{problem}
+
+\vfill 
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

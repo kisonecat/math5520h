@@ -1,0 +1,131 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Jordan canonical form}
+\date{Tuesday, September 24, 2019}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+Throughout, $f : V \to V$ is a linear operator on $V$, a finite dimensional vector space over $\C$.
+
+% https://golem.ph.utexas.edu/category/2011/12/the_eventual_image.html
+
+\begin{problem}
+  By $\ker^\infty f$ we denote the \textbf{eventual kernel} of $f$, meaning the union of
+  \[
+    \ker f \subset \ker (f^2) \subset \cdots.
+  \]
+  Find $n$ so that $\ker^\infty f = \ker (f^n)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Dually, the \textbf{eventual image}, written $\image^\infty$, is the intersection of
+  \[
+    \im f \supset \im (f^2) \supset \cdots.
+  \]
+  Show for any $n$ that $\image^\infty f = \image^\infty (f^n)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Find an $n$ so that $\image^\infty f = \image (f^n)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  The eventual image $\image^\infty f$ is the largest subspace
+  $W \subset V$ such that $W \subset f(W)$.
+\end{problem}
+
+% $\image^\infty f$ has this property
+% 
+
+\vfill
+
+\begin{problem}
+  The restriction $f |_{\image^\infty f}$ is an isomorphism.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  The intersection $\ker^\infty f \cap \image^\infty f$ is $\{ 0 \}$.
+\end{problem}
+
+% if v is in the union, then $f^n v = 0$ and $f^n w = v$, so $f^{2n} w = 0$ so $f^n w = 0$ so $v = 0$.
+
+\vfill
+
+\begin{problem}
+  There is a decomposition $V = \ker^\infty f \oplus \image^\infty f$.
+%  If $f : V \to V$ then $\ker f^{\dim V} \cap \image f^{\dim V} = 0$.
+\end{problem}
+
+% by rank-nullity
+
+\vfill
+
+\begin{problem}
+  Define the \textbf{generalized eigenspace} associated to $\lambda$ by $G_\lambda = \ker (f - I\lambda)^\dim V$.  Show that generalized eigenvectors corresponding to distinct eigenvalues are linearly independent.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For polynomials $p$ and $q$ and an operator $f : V \to V$, the subspace $\ker p(f)$ is $q(T)$-invariant.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For polynomials $p$ and $q$ and an operator $f : V \to V$, the subspace $\image p(f)$ is $q(T)$-invariant.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Generalized eigenspaces are invariant subspaces.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  %For a finite dimensional complex vector space $V$, 
+  Consider $f : V \to V$ with $\sigma(f) = \{ \lambda_1,\ldots,\lambda_k \}$.  Then $V = \bigoplus_{i=1}^k G_{\lambda_i}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $(f - \lambda I) |_{G_\lambda}$ is nilpotent.
+\end{problem}
+
+\vfill
+
+\end{document}
+
+Let $f : V \to V$ with $\dim V = n$.
+
+Pick $\lambda \in \mathbb{C}$ an eigenvalue.
+
+$\dim \Image (f - lambda I) = k < n$
+
+So $f |_\Image (f - lambda I)$ can be put into Jordan canonical form with basis $\mathcal{B} = (b_1,\ldots,b_k)$.
+
+If $E_\lambda \cap \Image (f - lambda I) = \{ 0 \}$, then
+$V = E_\lambda \oplus \Image (f - lambda I)$ and we're done.
+
+Suppose not!  Suppose $E_\lambda \cap \Image (f - lambda I) \neq \{ 0 \}$, with basis $(e_1,\ldots,e_r)$.
+
+Choose preimages for each $e_1$ 
+
+
+

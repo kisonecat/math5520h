@@ -1,0 +1,81 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Exactness}
+\date{Friday, August 30, 2019}
+\begin{document}
+\maketitle
+
+Suppose $f(x,y) = -P(x,y)/Q(x,y)$.  Rewrite $y' = f(x,y)$ as
+$\omega = P \, dx + Q \, dy = 0$.  This form is \textbf{exact} if
+there exists $F$ so that $dF = \omega$.
+
+\begin{problem}
+  Compute $\frac{d}{dx} F(x, y(x))$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Compute $d\omega$.  When $d\omega = 0$, we say $\omega$ is \textbf{closed}.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Is $d$ linear?  What is the image of $d$?  The kernel of $d$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Is $y \, dx - x \, dy$ an exact differential?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Relate $F$ to the solutions to $y' = f(x,y)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $d\omega = 0$, does there exist $F$ so that $dF = \omega$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Why is $F$ called a \textbf{potential}?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $\omega$ is not exact, it may nevertheless be that there is a $\mu$ so that $\mu P \, dx + \mu Q \, dy$ is exact.  In this case, $\mu$ is called an \textbf{integrating factor}.
+
+  For $\omega = A(x) \, y \, dx + B(x) \, dx + dy$.  Set $\mu  = e^{\int A(x) \, dx}$.  Is $\mu \omega$ exact?
+\end{problem}
+% d(\mu \omega) = (d\mu)\omega + \mu d\omega =  (A \mu dx)(dy) + \mu (A dy_
+
+\vfill
+
+\begin{problem}
+  Find $y$ so that $(3/x) y \, dx + (e^x / x^3) \, dx + dy = 0$.
+\end{problem}
+% integrating factor is exp(3 \log x) = x^3, so
+% $3 x^2 y \, dx + e^x \, dx + x^3 dy = 0$.
+% so d(e^x + x^3 y) = 0
+% so e^x + x^3 y = c
+% so y = (c - e^x)/x^3
+
+\vfill
+
+\begin{problem}
+  Let us relate the preceding back to the \textbf{autonomous} case.  Wanting to solve $y' = f(x,y) = -P(x,y)/Q(x,y)$ amounts to finding $x(t)$ and $y(t)$ satisfying $x'(t) = Q(x,y)$ and $y'(t) = -P(x,y)$.  What role does the integrating factor play?
+\end{problem}
+
+\end{document}

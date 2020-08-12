@@ -1,0 +1,90 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Generating functions}
+\date{November 1, 2019}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+\begin{problem}
+  Write \(e^{(x/2)(t - 1/t)}\) as a series
+  \[
+    \sum_{n=-\infty}^\infty \left( \sum_{k=0}^\infty \frac{(-1)^k \, (x/2)^{2k + n}}{k! \, \Gamma( n + k + 1)}  \right) t^n.
+  \]
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $J_n(-x) = J_{-n}(x)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $J'_n(x) = \frac{J_{n-1}(x) - J_{n+1}(x)}{2}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $2 n \, J_n(x) = x \, J_{n-1}(x) + x \,  J_{n+1}(x)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $e^{i x \sin \theta} = \sum_{n=-\infty}^\infty J_n(x) e^{i n \theta}$.  This is the \textbf{Jacobi-Anger expansion.}
+\end{problem}
+
+\vfill
+
+\end{document}
+
+\begin{problem}
+Recall that we found a series for $J_n(x)$, the Bessel function of the first kind of order $n$, namely
+\[
+  J_n(x) = .
+\]
+\end{problem}
+
+\begin{problem}
+  Suppose $x \neq 0$ is a zero of $J_n$.  Then $x$ is a simple zero.
+\end{problem}
+
+\begin{problem}
+  If $J_n(x) = 0$, then $J_n(-x) = 0$.
+\end{problem}
+
+\begin{problem}
+  If $J_n(x) = 0$, then $J_n(\bar{x}) = 0$.
+\end{problem}
+
+\begin{problem}
+  Differentiate
+  \[
+    x \left( b J_n(ax) J'_n(bx) - a J'_n(ax) J_n(bx) \right)
+  \]
+  to compute
+   $(a^2-b^2) \int_0^x t J_n(at) J_n(bt) \, dt$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Apply the previous computation to the case that  $a$ and $b$ are conjugate zeros of $J_n(x)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  What can you conclude about the zeroes of $J_n$?
+\end{problem}
+
+\vfill
+
+\end{document}

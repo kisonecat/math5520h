@@ -1,0 +1,68 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Self-adjoint operators}
+\date{Tuesday, September 24, 2019}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+A \textbf{spectral theorem} is a theorem providing conditions for when
+a linear operator can be diagonalized.
+
+In what follows, $V$ is a finite dimensional inner product space over
+the complex numbers and $f$ is a self-adjoint linear operator on $V$.
+
+\begin{problem}
+  What does it mean to say that $f : V \to V$ is self-adjoint?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Suppose $\lambda$ is an eigenvalue of $f$.  Is ${E_\lambda}^\perp$ an invariant subspace of $f$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  The operator $f$ can be diagonalized.
+%  There is an orthonormal basis of $V$ consisting of eigenvectors of
+%  $f$ for which the corresponding eigenvalues are real.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  All eigenvalues of $f$ are real.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  There is an orthonormal basis for $V$ consisting of eigenvectors of $f$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Formulate a related theorem for symmetric matrices with
+  \textit{real} entries.  (\textit{Warning:} How do you know there is an eigenvector?)
+\end{problem}
+
+\vfill
+
+\end{document}
+
+\begin{problem}
+  The operator $f$ is self-adjoint iff for all $\vec{v} \in V$ we have $\langle f(\vec{v}),\vec{v} \rangle \in \mathbb{R}$.
+\end{problem}
+
+\begin{problem}
+  If for all $\vec{v} \in V$ we have $\langle f(\vec{v}, \vec{v} \rangle = 0$, then $f = 0$.
+\end{problem}
+
+

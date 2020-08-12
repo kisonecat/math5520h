@@ -1,0 +1,57 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Distributions and Green's}
+\date{November 20, 2019}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathcal{D}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+\begin{problem}
+The Green's function $G(x,s)$ associated with $Ly = f(x)$ satisfies $LG(x,s) = \delta(x-s)$.
+
+Verify $y(x) = \displaystyle\int_{-\infty}^\infty G(x,s) \, f(s) \, ds$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $(Ly)(x) = y''(x) + a_1(x) \, y'(x) + a_0(x) \, y(x)$ and suppose $\ker L$ has basis $\{ y_1, y_2 \}$.  Guess
+  \[
+    G(x,s) = \begin{cases}
+      \alpha_1 y_1(x) + \alpha_2 y_2(x) & \mbox{if $x < s$}, \\
+      \beta_1 y_1(x) + \beta_2 y_2(x) & \mbox{if $x > s$},
+    \end{cases}
+  \]
+  and find conditions on $\alpha_1,\alpha_2,\beta_1,\beta_2$ so that $LG(x,s) = \delta(x-s)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Set $Ly = y''$ with the initial conditions $y(0) = 0$ and $y'(0) = 0$.  Find $G$ so that $LG(x,s) = \delta(x-s)$ and $G(0,s) = 0$ and $G_x(0,s) = 0$.  
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $Ly = y'' - y$ and impose boundary conditions $\lim_{x \to \pm \infty} y(x) = 0$.
+
+  Find a Green's function for $L$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $Ly = y'' + y$ with boundary conditions $y(0) = y(\pi/2) = 0$.
+
+  Find a Green's function for $L$.
+\end{problem}
+
+\vfill
+
+\end{document}

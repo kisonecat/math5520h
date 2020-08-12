@@ -1,0 +1,58 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Homogeneous differential equations}
+\date{Monday, September 9, 2019}
+\DeclareMathOperator{\Image}{Im}
+\begin{document}
+\maketitle
+
+\begin{problem}
+  What's an initial value problem?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Solve $y' + ay = 0$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Solve $y'' + by' + c = 0$.
+\end{problem}
+
+\vfill
+\vfill
+
+%Want to show that $y'' + ay' + by = 0$ and $y(0) = y'(0) = 0$ then $y$ is identically zero.
+
+%Pick $T > 0$.
+
+%$M=$ max of $|y(t)|$ on interval $[-T,T]$.
+
+%Integrate equation to find
+%\[
+%  y'(t) = -by(t) - c \int_0^t y(s) \, ds
+%\]
+%Integrate again
+%\[
+%  y(t) = - b \int_0^t y(u) \, du - c \int_0^t \int_0^u y(s) \, ds \, du.
+%\]
+%Taking norms
+%\[
+%  |y(t)| = |b| \int_0^{|t|} |y(u)| \, du + |c| \int_0^{|t|} \int_0^u |y(s)| \, ds \, du.
+%\]
+%Since $M$ is chosen to be larger,
+%\[
+%  |y(t)| = |b| M |t| + |c| M (t^2/2)
+%\]
+%Choose $T$ so small that $|b| T + |c| T^2/2 < 1/2$ and conclude $M \leq (1/2) M$.
+
+%Then apply to $z(t) = y(t + T/2)$ to extend solution.  Show vanishes on whole real line.
+
+
+\end{document}

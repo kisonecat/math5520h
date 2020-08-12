@@ -1,0 +1,109 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Green's functions}
+\date{November 18, 2019}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+Consider the Sturm-Liouville problem
+\[
+  Ly = \frac{d}{dx} \left( p(x) \, \frac{dy}{dx} \right) - q(x) \, y = f(x),
+\]
+where $y(a) = y(b) = 0$.  We seek a \textbf{Green's function}, meaning a function $G(x,t)$ so that the solutions to the given S-L problem are
+\[
+  y(x) = \int_a^b G(x,t) \, f(t) \, dt.
+\]
+
+\begin{problem}
+  A solution to $Ly = \frac{d}{dx} \left( p(x) \, \frac{dy}{dx} \right) - q(x) \, y = 0$
+  is a linear combination of two functions $y_1$ and $y_2$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  %where $y_1(a) = 0$ and $y'_1(a) = -1$ and $y'_2(b) = 0$ and $y'_2(b) = -1$.
+  Choose $y_1$ and $y_2$ so that
+  a solution to $Ly = 0$ satisfying $y(a) = 0$ is \(u_1(x) = y_2(x)\) and a solution to $Ly = 0$ satisfying $y(b) = 0$ is $u_2(x) = y_1(x)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Perform \textbf{variation of parameters} by 
+  defining a Green's function
+  \[
+    G(x,t) = \begin{cases}
+      c_1(x) \, u_1(t) & \mbox{if } a \leq t < x \\
+      c_2(x) \, u_2(t) & \mbox{if } x < t \leq b
+      \end{cases}
+    \]
+    Set \begin{align*}
+          c_1(x) &= \frac{u_2(x)}{p(x) \, W(u_1,u_2)(x)}, \\
+          c_2(x) &= \frac{u_1(x)}{p(x) \, W(u_1,u_2)(x)}. \\          
+        \end{align*}
+        
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Differentiate $p(x) \, W(u_1,u_2)(x)$ to verify that for some constant $K$ that
+  \[
+    G(x,t) = \begin{cases}
+      u_1(x) \, u_1(t) / K & \mbox{if } a \leq t < x \\
+      u_2(x) \, u_2(t) / K & \mbox{if } x < t \leq b
+      \end{cases}
+    \]
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $G(x,t)$ is continuous,
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $G(x,t) = G(t,x)$,
+\end{problem}
+
+\vfill
+
+\begin{problem}
+For $x \neq t$ we have $LG(x,t) = 0$.
+\end{problem}
+
+\vfill
+
+  \begin{problem}
+For $t \neq 0$ we have $G(a,t) = G(b,t) = 0$.
+  \end{problem}
+
+  \vfill
+  
+    \begin{problem}
+ $\lim_{x \to t^{+}} G_x(x,t) - \lim_{x \to t^{-}} G_x(x,t) = -\frac{1}{p(t)}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Differentiate
+  \[
+    y(x) = \int_a^b G(x,t) \, f(t)  \, dt = \int_a^x G(x,t) \, f(t) \, dt + \int_x^b G(x,t) \, f(t) \, dt.
+  \]
+\end{problem}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

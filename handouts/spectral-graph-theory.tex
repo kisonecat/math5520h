@@ -1,0 +1,118 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Spectral graph theory}
+\date{November 15, 2019}
+\begin{document}
+\maketitle
+
+\begin{problem}
+  What is a \textbf{graph}?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For a graph $G$, what is the \textbf{adjacency matrix}, denoted $A_G$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  What does the $ij$-entry of ${A_G}^k$ represent?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For a graph $G$, what is the \textbf{Laplacian} matrix $L_G$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Why are the eigenvalues of $L_G$ real?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $G(e)$ be the subgraph of $G$ consisting solely of edge $e$.  Identify $\sum_{e \in E(G)} L_{G(e)}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For the edge $e = \{i,j\}$ in the graph $G$, compute
+  $\langle v, L_{G(e)} v \rangle$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Show that $\langle v, L_{G(e)} v \rangle \geq 0$.  (In this case, we say that the symmetric operator $L_G$ is \textbf{positive semi-definite}.  If the inequality is strict, we say it is \textbf{positive definite}.)
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For a matrix $M$, is $M^\star M$ positive (semi-)definite?  
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  What can be said about the spectrum of a positive semi-definite operator?
+\end{problem}
+
+\vfill
+
+In the following, let
+$\lambda_1 \leq \lambda_2 \leq \ldots \leq \lambda_n$ be the
+eigenvalues of $L_G$.
+
+\begin{problem}
+  Compute $\lambda_1$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Suppose $G$ is connected.  Show $\lambda_2 > 0$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  What feature of $G$ does $\dim \ker L_G$ describe?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Show that $\lambda_n$ is the maximum of $\langle v, L_g v \rangle / \langle v, v \rangle$ for $v \neq 0$.  (This is a \textbf{min-max theorem}.)
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Pick an operator $f : \R^2 \to \R^2$ which is not self-adjoint but which has only real eigenvalues.  Show that $\langle v, f v \rangle / \langle v, v \rangle$ may exceed the largest eigenvalue of $f$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If there is a vertex of $G$ with degree $d$, then $\lambda_n \geq d$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If there is a vertex of $G$ with degree $d$, then $\lambda_n \geq d + 1$.
+\end{problem}
+
+\vfill
+
+\end{document}

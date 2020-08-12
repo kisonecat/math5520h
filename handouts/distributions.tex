@@ -1,0 +1,134 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Distributions}
+\date{November 19, 2019}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathcal{D}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+\begin{problem}
+  We say $\varphi : \R \to \R$ is a  \textbf{test function} if $\varphi$ is smooth and has \textbf{compact support}.
+
+  Does the set of test functions $\D(\R)$ form a vector space?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  A \textbf{distribution} is a linear functional $F : \D(\R) \to \R$ which
+  is continuous in the sense that
+  for every
+  compact $K \subset \mathbb{R}$ there are constants $M$ and $m$ so
+  that
+  \[
+    F(\varphi) \leq M \cdot \max_{n \leq m} \max_{x \in \R} | f^{(n)}(x) |.
+  \]
+  for $\varphi$ with support in $K$.
+
+  %, in the sense that $\lim_{k\to\infty} F(\varphi_k) = F(\lim_{k\to\infty} \varphi_k)$.
+
+  Verify that the \textbf{Dirac delta} defined by
+  $\langle \delta, \varphi \rangle = \varphi(0)$ is a distribution.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Suppose $f : \R \to \R$ is a locally integrable function.  (Define
+  \textbf{locally integrable}.)
+
+  Does $\langle f, \varphi \rangle = \int_\R f(x) \, \varphi(x) \, dx$
+  define a distribution?  %We therefore identify certain functions with a corresponding distribution.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Use integration by parts to define the derivative of a distribution.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Define the \textbf{Heaviside step function} by
+  \[
+    H(x) = \begin{cases}
+      0 &\mbox{if $x < 0$}, \\
+      1 &\mbox{if $x \geq 0$}.
+    \end{cases}
+  \]
+  Compute $H'(x)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $f(x) = |x|$ and compute $f'(x)$ as a distribution.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Compute the derivative of the Dirac delta function, i.e.,
+  compute $\langle \delta', \varphi \rangle$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Does the distribution $\delta'$ arise from integrating against some function?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  For a distribution $f$ and a smooth function $\psi$, define a distribution $f \psi$.
+  %by the rule $\langle f \psi, \varphi \rangle = \langle f, \psi \varphi$.  Does this definition make sense?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Compute $\delta \cdot x$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Define $f(x) = x (\log   |x|  — 1)$ and verify $f'(x) = \log |x|$.
+\end{problem}
+
+\vfill
+
+% http://sites.mathdoc.fr/OCLS/pdf/OCLS_1954__21__1_0.pdf
+
+\begin{problem}
+  Verify further that $f''(x) \cdot x = 1$.
+\end{problem}
+
+\vfill
+
+% f'(x) = (\log   |x|  — 1) + x (1/x)
+
+\begin{problem}
+  Can you multiply distributions in general?  Consider
+  \[
+    0 = x^{-1} \cdot 0 = x^{-1} (x \delta) = (x^{-1} x) \delta = 1 \cdot \delta = \delta.
+  \]
+  This is the \textbf{Schwartz impossibility theorem.}
+\end{problem}
+
+\vfill
+
+%https://math.stackexchange.com/questions/1357877/schwartz-impossibility-result
+
+  \end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

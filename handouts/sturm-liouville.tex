@@ -1,0 +1,60 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{The tiniest bit of Sturm-Liouville}
+\date{October 31, 2019}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\image}{im}
+\begin{document}
+\maketitle
+
+Learning is about making connections.  As usual, we relate the
+differential equation story and the linear algebra story.
+
+\begin{problem}
+  Consider the operator $D = -\frac{d^2}{dx^2}$ with domain consisting
+  of smooth functions $f$ on $[0.2\pi]$ with the property that
+  $f(0) = f(2\pi) = 0$.  What is the adjoint of $D$?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  The eigenvalues of a self-adjoint operator are real.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Eigenvectors of a self-adjoint operator, corresponding to distinct eigenvalues, are orthogonal.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Sturm-Liouville theory studies differential equations of the form
+\[
+  \frac{d}{dx} \left[p(x){ \frac{d}{dx} y(x) }\right]+q(x)y=-\lambda w(x)y.
+\]
+
+  The \textbf{Legendre differential equation} is
+  \[
+    (1-x^2) y''(x) - 2x y'(x) + n(n+1) y(x) = 0.
+  \]
+  Put this into Sturm-Liouville form.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Let $Ly = \left( (1-x^2) y' \right)'$, and compute
+  \[
+    \langle Lf, g \rangle - \langle f, Lg \rangle.
+  \]
+\end{problem}
+
+\vfill
+
+\end{document}

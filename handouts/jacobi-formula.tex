@@ -1,0 +1,95 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Jacobi formula}
+\date{Tuesday, October 8, 2019}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\trace}{tr}
+\begin{document}
+\maketitle
+
+\section{Finding inverses}
+
+\begin{problem}
+  For $M = (m_{ij})$ with minors $M_{ij}$, define $C = (c_{ij})$ by
+  the rule $c_{ij} = (-1)^{i+j} M_{ij}$.  This is the \textbf{cofactor
+    matrix}.  Compute $MC^{\textsf{T}}$.
+\end{problem}
+
+\begin{problem}
+  Define the \textbf{adjugate} of $M$ to be $\adj(M) = C^{\textsf{T}}$.
+    How does $\adj(M)$ relate to $M^{-1}$?
+\end{problem}
+
+\vfill
+
+\section{Cramer's rule}
+
+\begin{problem}
+  For $M \in \Mat_{n \times n}(k)$ and $b \in k^n$, define $M_i$ to be
+  $M$ but with column $i$ replaced by $b$.
+
+  Define $x \in k^n$ via $x_i = \det M_i / \det M$ and check that
+  $Mx = b$.
+\end{problem}
+
+\begin{problem}
+  Here is a short proof of Cramer's rule.\footnote{Adopted from: Robinson, Stephen M. ``A short proof of Cramer's rule.'' \textit{Mathematics Magazine} 43, no.~2 (1970): 94-95.  This is also the perspective shared by 3Blue1Brown at \url{https://www.youtube.com/watch?v=jBsC34PxzoM}}
+
+  We wish to solve $Mx = b$.
+  
+  Let $X_i$ be the identity matrix, but with column $i$ replaced by $x$.  Check $\det X_i = x_i$.
+\end{problem}
+
+\begin{problem}
+  Therefore $x_i = \det (M^{-1} M X_i) = \det (MX_i) / \det M$.  Check $M_i = MX_i$.
+\end{problem}
+
+\begin{problem}
+  Explain what just happened geometrically.
+\end{problem}
+
+\vfill
+
+\section{Jacobi's formula}
+
+\begin{problem}
+  For $A \in \Mat_{n \times n}(k)$, if $f(x) = \det(I+xA)$, then $f'(0) = \trace A$.  (Recall S07P20.)
+\end{problem}
+
+\begin{problem}
+  For $A \in \Mat_{n \times n}(k)$ and $B \in \GL_{n}(k)$, set $g(x) = \det(B+xA)$.  Show $g'(0) = (\det B) \cdot \trace (B^{-1} A)$.
+\end{problem}
+% this is done via $g(x) = \det(B + xA) = det(B) det(I + xB^{-1} A)$
+
+\begin{problem}
+  For some function $f : \R \to \Mat_{n \times n}(k)$, show that
+  \[
+    \frac{d}{dt} \det f(t) = \trace \left( \adj f(t) \cdot f'(t) \right).
+  \]
+\end{problem}
+
+\begin{problem}
+  Show $\det e^{tA} = e^{\trace tA}$.  (Recall S06P14.)
+\end{problem}
+
+\vfill
+
+\section{Liouville's formula (well, the constant coefficient case)}
+
+\begin{problem}
+  For $A \in \Mat_{n \times n}(\mathbb{C})$, consider the first-order homogeneous constant coefficient linear differential equation $y' = Ay$.
+
+  Suppose $\{ y_1, \ldots, y_n \}$ are a basis of solutions.
+
+  Assemble the $y_i$ into a matrix $Y$, column $i$ of which is $y_i$.
+
+  Set $f(x) = (\det Y)(x) \cdot e^{-x \trace A}$.  Compute $f'(x)$.
+\end{problem}
+
+
+\end{document}

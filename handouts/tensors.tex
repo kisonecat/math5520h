@@ -1,0 +1,110 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{Tensor product}
+\date{November 26, 2019}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Hom}{Hom}
+\begin{document}
+\maketitle
+
+Throughout, $V = \Span \{ v_1, \ldots, v_n \}$ and $W = \Span \{ w_1, \ldots, w_m \}$.  
+
+\section{Prove or disprove and salvage if possible.}
+
+\begin{problem}
+  $0 \otimes v = 0$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  If $v \in V$ and $w \in W$, then $v \otimes w$ is in $\Span \{ v_i \otimes w_j \}$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  There exists a bilinear map $f_{k,\ell} :V \times W \to k$ so that \[
+    f_{k,\ell}( \sum_i \alpha_i v_i, \sum_j \beta_j w_j) = \alpha_k \beta_\ell.
+  \]
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  The spanning set $\{ v_i \otimes w_j \}$ is linearly independent.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Every element of $V \otimes W$ can be written as $v \otimes w$ for some $v \in V$ and $w \in W$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $V \otimes W \cong W \otimes V$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $(V \otimes W) \otimes U \cong V \otimes (W \otimes U)$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $V \otimes (W \oplus U) \cong (V \otimes W) \oplus U$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  $V \otimes W \cong \Hom(V,W)$.
+\end{problem}
+
+\vfill
+
+\section{Exploration.}
+
+\begin{problem}
+  Use P09 to define $V \otimes W$ for finite dimensional vector spaces.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Describe an evaluation map $V \otimes V^\star \to k$.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Suppose $\{ v'_1,\ldots, v'_n \}$ is another basis for $V$, and suppose there are basis $\{ f_1,\ldots,f_n\}$ and $\{ f'_1,\ldots,f'_n \}$ for $V^\star$, dual to $\{v_1,\ldots,v_n\}$ and $\{v'_1,\ldots,v'_n\}$ respectively.  Relate the ``change of basis'' matrix for the bases $\{v_1,\ldots,v_n\}$ and $\{v'_1,\ldots,v'_n\}$ to that of the duals.
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Describe a coevaluation map $k \to V \otimes V^\star$ by defining an element of $V \otimes V^\star$ via the formula $\sum v_i \otimes f_i$ where $\{ f_i \}$ is  a basis dual to $\{ v_i \}$.  How does this coevaluation map depend on that choice of basis?
+\end{problem}
+
+\vfill
+
+\begin{problem}
+  Regard $\mathbb{C}$ as a two-dimensional vector space over $\mathbb{R}$.  If $V$ is an $\mathbb{R}$-vector space, consider the complexification $V^{\mathbb{C}} := \mathbb{C} \otimes_{\mathbb{R}} V$, where ``$\otimes_{\mathbb{R}}$'' means we take the tensor product of $\mathbb{C}$ and $V$ as real vector spaces.  Can you describe a $\mathbb{C}$-vector space structure on $V^{\mathbb{C}}$?
+\end{problem}
+
+\vfill
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,79 @@
+\documentclass{homework}
+\input{preamble}
+\usepackage{hyperref}
+\author{Jim Fowler}
+\course{Math 5520H}
+\title{The Frobenius Method}
+\date{Tuesday, October 30, 2018}
+\begin{document}
+\maketitle
+
+\newenvironment{truefalse}{\begin{problem}}{\hfill \textsf{True\quad False}\end{problem}}
+
+In what follows, we will find solutions to differential equations of the form
+\[
+  x^2 \, y'' + x \, p(x) \, y' + q(x) \, y = 0
+\]
+where $x = 0$ is a \textit{regular} singular point.
+
+\section{Distinct roots}
+
+\begin{problem}
+  Solve $2 \, x^2 \, y'' - x\, y' + (1+x) \, y = 0$.
+\end{problem}
+
+\vfill
+
+
+\begin{problem}
+  Solve $4\, x\, y'' + 2 \, y' + y = 0$.
+\end{problem}
+
+\vfill
+
+
+\section{Repeated roots}
+
+Use $y(x) = \log x \, y_1(x) + \sum_{k=1}^\infty a_k \, x^{k+r}$.
+
+\begin{problem}
+  Solve $x \, y'' + y' - y = 0$.
+\end{problem}
+
+\vfill
+
+
+\section{Distinct roots, separated by an integer}
+
+Perhaps use $y(x) = \log x \, y_1(x) + \sum_{k=0}^\infty a_k \, x^{k+r}$.
+
+
+\begin{problem}\label{evens}
+  Solve $x y'' + 3 y' - xy = 0$.
+\end{problem}
+
+\vfill
+
+
+\begin{problem}\label{odds}
+  Solve $x y'' + 4 y' - xy = 0$.
+\end{problem}
+
+\vfill
+
+
+\begin{problem}
+  What happens in \ref{evens} compared to \ref{odds}?
+\end{problem}
+
+\vfill
+
+
+\begin{problem}
+  Solve $x^2 \, y'' + x \, y' + \left( x^2 - 1/4 \right) \, y = 0 $.
+\end{problem}
+
+\vfill
+
+
+\end{document}
