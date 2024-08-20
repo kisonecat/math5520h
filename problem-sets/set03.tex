@@ -3,6 +3,10 @@
 \course{Math 5520H}
 \author{Jim Fowler}
 
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{8}
+
 \begin{document}
 \maketitle
 
@@ -54,12 +58,6 @@ Unfortunately, no one can be told what the Matrix is. You have to see it for you
 \begin{problem}\label{derivative-multiplication-commute}On the vector space of polynomials $\R[x]$, define two linear operators $M_x, \frac{d}{dx} : \R[x] \to \R[x]$ by the rules $M_x(f) = x \, f$ and $\frac{d}{dx}(f) = f'$, the derivative.  Do these operators commute?  Compute $[M_x,\frac{d}{dx}]$.
 \end{problem}
 
-\begin{solution}
-  These operators do not commute.  Let $p = \sum_{n=0}^\infty c_n x^n$
-  with all but finitely many of the $c_n$ equal to zero.  Then
-  $p' = \sum_{n=1}^\infty n c_n x^{n-1}$, and $M_x p' = \sum_{n=1}^\infty n c_n x^{n}$.  On the other hand, $M_x p = \sum_{n=0}^\infty c_n x^{n+1}$ and $\frac{d}{dx} M_x p = \sum_{n=0}^\infty (n+1) c_n x^n$. Therefore $[M_x,\frac{d}{dx}] p = \sum_{n=1}^\infty n c_n x^{n} - \sum_{n=0}^\infty (n+1) c_n x^n = -p$.  In other words, $[M_x,\frac{d}{dx}]$ is $-\id$.
-\end{solution}
-
 \begin{problem}
   For a $2$-by-$2$ matrix $A$, define the transformation
   $f_A : \Mat_{2\times 2}(\R) \to \Mat_{2\times 2}(\R)$ by the rule
@@ -67,15 +65,6 @@ Unfortunately, no one can be told what the Matrix is. You have to see it for you
   $\mathcal{B}$ of $\Mat_{2\times 2}(\R)$ and compute
   $[f_A]_{\mathcal{B}}$.  What is the rank and nullity of $[f_A]_{\mathcal{B}}$?
 \end{problem}
-
-\begin{solution}
-  If $A = 0$, then $f_A$ is the zero map and $[f_A]_{\mathcal{B}}$ has
-  rank zero and nulilty four.  If $A$ has rank two, then $A$ is
-  invertible, and $f_{A^{-1}}$ is the inverse for $f_A$, so
-  $[f_A]_{\mathcal{B}}$ has rank four and nullity zero.  The most
-  interesting case to work out is when $A$ has rank $1$ in which case
-  the rank and nullity of $[f_A]_{\mathcal{B}}$ is two.
-\end{solution}
 
 \section{Exploration}
 
@@ -93,27 +82,12 @@ Unfortunately, no one can be told what the Matrix is. You have to see it for you
   algebra over a field?
 \end{problem}
 
-\begin{solution}
-  The space $\Hom(V)$ is an algebra over the same field over which $V$
-  is defined.  The bilinear product is composition.  (If you like this
-  sort of thing, you may enjoy reading about $C^\star$-algebras.)
-\end{solution}
-
 \begin{problem}
   Given mysterious linear transformations $f : V \to W$ and
   $g : W \to U$ between finite dimensional vector spaces and knowing
   only the ranks of $f$ and $g$ and the dimensions of the spaces
   involved, how big or small could $\rank (g \circ f)$ be?
 \end{problem}
-
-\begin{solution}
-  Working this out in detail is a great exercise in the rank-nullity
-  theorem!  It is possible that $\rank (g \circ f)$ could be as big as
-  the minimum of the ranks of $f$ and $g$.  In the worst case, $g$
-  kills as much of the image of $f$ as possible, in which case the
-  $\rank (g \circ f)$ is as small as
-  $\rank f - \nullity g = \rank f - \dim W + \rank g$.
-\end{solution}
 
 \begin{problem}\label{definition-minimal-polynomial}For a square matrix $M$, the \textbf{minimal polynomial} of $M$ is
   the monic polynomial $p$ of least degree such that $p(M) = 0$.
@@ -122,19 +96,11 @@ Unfortunately, no one can be told what the Matrix is. You have to see it for you
   $f(v) = 2v$?
 \end{problem}
 
-\begin{solution}
-  The polynomial $p(x) = x - 2$ is such that $p(M) = 0$.
-\end{solution}
-
 \section{Prove or Disprove and Salvage if Possible}
 
 \begin{problem}
   The function $E_2 : \mathcal{P}(\R) \to \R$ given by $E_2(f) = f(2)$ is a linear transformation.
 \end{problem}
-
-\begin{solution}
-  This is linear.  Indeed, $E_2(f + g) = (f+g)(2) = f(2) + g(2) = E_2(f) + E_2(g)$ and likewise for scalar multiplication.
-\end{solution}
 
 \begin{problem}
   Suppose $V$ and $U$ are subspaces of a finite dimensional vector
@@ -142,125 +108,41 @@ Unfortunately, no one can be told what the Matrix is. You have to see it for you
   Then $\dim W = \dim V + \dim U$.
 \end{problem}
 
-\begin{solution}
-  This is true with the proviso that $V \cap U = \{0\}$, in which case
-  we might even write $W = V \oplus U$.
-
-  Suppose $\{ v_i \}$ and $\{u_i\}$ are bases for $V$ and $U$,
-  respectively.  Then $\{v_i\} \cup \{u_i\}$ is a basis for $W$.  That
-  this spans is easy (and does not depend on $V \cap U = \{0\}$).
-  That this is linearly independent is harder to see: a linear
-  dependence $\sum \lambda_i v_i + \sum \mu_j u_j = 0$ can be written
-  as $\sum \lambda_i v_i =-\sum \mu_j u_j$, which by the assumption
-  $V \cap U = \{0\}$ gives rise to linear dependences for $\{v_i\}$
-  and $\{u_i\}$, making this a trivial dependence.
-\end{solution}
-
 \begin{problem}
   A maximal linearly independent set is a basis.
 \end{problem}
-
-\begin{solution}
-  Suppose $S$ is a linearly independent subset of a vector space $V$
-  with the property that, for any $v \in V \setminus S$, the set
-  $S \cup \{v\}$ is linearly dependent.  The nontrivial linear
-  dependence cannot involve $v$, so it the nontrivial linear
-  dependence actually shows $v$ is in the span of $S$.  Thus every
-  vector in $V$ is in the span of the linearly indepedent set $S$, and
-  so $S$ is a basis.
-\end{solution}
 
 \begin{problem}
   Every vector space has a basis.
 \end{problem}
 
-\begin{solution}
-  This can be proved by invoking the axiom of Choice, in the guise of
-  Zorn's lemma.  (And in fact, this is equivalent to Choice.)
-\end{solution}
-
 \begin{problem}
   The kernel of the linear transformation $T : V \to W$ is a subspace of $V$.
 \end{problem}
-
-\begin{solution}
-  The kernel is nonempty (because $\vec{0}$ is in $\ker T$), and a
-  linear combination of vectors in the kernel is also in the kernel,
-  because if $v_1, v_2 \in \ker T$, then
-  \[
-    T(\alpha_1 v_1 + \alpha_2 v_2) = \alpha_1 T(v_1) + \alpha_2 T(v_2) = 0.
-  \]
-\end{solution}
 
 \begin{problem}
   The image of a basis is a basis.
 \end{problem}
 
-\begin{solution}
-  This is not true, but it could be salvaged if, say, the
-  transformation has trivial kernel.
-\end{solution}
-
 \begin{problem} % a couple possible salvages
   A linear transformation $T : V \to V$ is injective iff $\ker T = V$.
 \end{problem}
-
-\begin{solution}
-  Again, this is wrong, but there are a couple possible salvages.  Injective could be changed to surjective (``a linear transformation $T : V \to V$ is \textit{surjective} iff $\ker T = V$'') or the condition on the kernel could be changed (a linear transformation $T : V \to V$ is injective iff $\ker T = \{ 0 \}$.).
-\end{solution}
 
 \begin{problem}
   A linear transformation $T : V \to V$ is either surjective or has nontrivial kernel.
 \end{problem}
 
-\begin{solution}
-  These sorts of dichotomy results can be proved by invoking rank-nullity.  In this case, if $T$ is not surjective, then $\rank T < \dim V$, in which case $\nullity T > 0$, so $\ker T \neq \{ 0 \}$.
-\end{solution}
-
 \begin{problem}
   Suppose $T : V \to V$ is a linear transformation.  Then because of the rank-nullity theorem, $\ker T \cap \image T = \{0\}$.
 \end{problem}
-
-\begin{solution}
-  This is designed to address a misconception that rank-nullity holds
-  because dimensions of complementary subspaces sum to the total
-  dimension.  The nicest salvage is to consider how large
-  $\dim (\ker T \cap \image T)$ can be.
-\end{solution}
 
 \begin{problem}
   Suppose $f, g: V \to V$ are linear transformations with the property that $f \circ g = \id$.  Then $g \circ f = \id$.
 \end{problem}
 
-\begin{solution}
-  This is not true if $V$ is infinite dimensional.  For instance, let
-  $f$ be the shift operator, and define $g : \R^\infty \to \R^\infty$
-  by $g(a_1,a_2,\ldots) = (0,a_1,a_2,\ldots)$.  Then $f \circ g = \id$
-  but $(g \circ f)(a_1,a_2,\ldots) = (0,a_2,a_3,\ldots)$.
-
-  But this is true with an added hypothesis: assume $V$ is finite
-  dimensional.  Associativity shows
-  $g = g \circ (f \circ g) = (g \circ f) \circ g$.  But
-  $f \circ g = \id$ means $g$ is injective and so by the finite
-  dimensionality of $V$, the operator $g$ is also surjective.
-  Therefore, for every $v \in V$, there is a $w \in V$ so that
-  $g(w) = v$, so $g(w) = (g \circ f)(g(w))$, and therefore
-  $v = (g \circ f)(v)$.
-\end{solution}
-
 \begin{problem}
   Suppose $f : V \to V$ has the property for all $v \in V$ that $(f \circ f)(v) = 0$.  Then $\ker f \subset \image f$.
 \end{problem}
-
-\begin{solution}
-  Salvage with $\image f \subset \ker f$.  Suppose $w \in \image f$.
-  This means taht $w = f(v)$ for some $v \in V$.  But $f(f(v)) = 0$,
-  so $f(v) \in \ker f$.  We have shown $\image f \subset \ker f$.
-
-  What is stated (``$\ker f \subset \image f$'') need not be true.
-  More emphatically, consider the zero map $f(v) = 0$.  In this case,
-  $\ker f = V$ but $\image f = \{0\}$.
-\end{solution}
 
 \begin{problem}\label{simultaneous-diagonalizability-commute}Given
   linear operators $f, g : V \to V$ on a finite dimensional vector
@@ -269,47 +151,12 @@ Unfortunately, no one can be told what the Matrix is. You have to see it for you
   matrices.  Then $f \circ g = g \circ f$.
 \end{problem}
 
-\begin{solution}
-  Note that diagonal \textit{matrices} commute, and so
-  \[
-    [f]_{\mathcal{B}} \cdot [g]_{\mathcal{B}} = [g]_{\mathcal{B}} \cdot [f]_{\mathcal{B}}.
-  \]
-  Therefore
-  \[
-    [f \circ g]_{\mathcal{B}} = [g \circ f]_{\mathcal{B}},
-  \]
-  so $f \circ g = g \circ f$.
-\end{solution}
-
 \begin{problem}
   Given linear operators $f, g : V \to V$ on a finite dimensional
   vector space $V$ with the property $f \circ g = g \circ f$, there is
   an ordered basis $\mathcal{B}$ of $V$ so that $[f]_{\mathcal{B}}$
   and $[g]_{\mathcal{B}}$ are both diagonal matrices.
 \end{problem}
-
-\begin{solution}
-  This is not true.  Just because two not-necessarily-diagonalizable
-  operators on a finite dimension space commute does not mean that
-  they are simultaneously diagonalizable though the converse is true
-  and could be your salvage if you don't mind repeating
-  \ref{simultaneous-diagonalizability-commute}: if two operators are
-  simultaneously diagonalizable---meaning that there is a single
-  ordered basis $\mathcal{B}$ so that $[f]_{\mathcal{B}}$ and
-  $[g]_{\mathcal{B}}$ are both diagonal matrices---then
-  $f \circ g = g \circ f$.
-
-  In fact, if $f, g$ are diagonalizable, then commutativity is
-  equivalent to being simultaneously diagonalizable.  So our search
-  for a counterexample to this statement should proceed by seeking
-  operators which are diagonalizable in the first place.  To emphasize this, pick $f = g$ but nilpotent, say represented by
-  \[
-    \begin{bmatrix}
-      0 & 1 \\
-      0 & 0
-    \end{bmatrix}.
-  \]
-\end{solution}
 
 \begin{problem}
   The vector space $V \cong \R^2$ has ordered basis $\mathcal{B} = (e_1,e_2)$ and the linear map $f : V \to V$ is represented by
@@ -318,15 +165,5 @@ Unfortunately, no one can be told what the Matrix is. You have to see it for you
   \]
   Then the minimal polynomial of $f$ is $(x-a)(x-c)$.
 \end{problem}
-
-\begin{solution}
-  We first check, by explicit calculation, that $f$ satisfies $(x-a)(x-c)$.
-
-  The only worry is that $f$ satisfies a lower degree monic
-  polynomial, but in that case $f$ would be a multiple of the
-  identity.  This happens if $a = c$ and $b = 0$, in which case the
-  minimal polynomial of $f$ is $(x-a)$.  But aside from this case,
-  we're done.
-\end{solution}
 
 \end{document}
