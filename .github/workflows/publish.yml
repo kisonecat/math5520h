@@ -1,0 +1,89 @@
+name: Build and publish problem sets
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: canvas
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Cache TeX Live
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/share/texlive
+            /var/lib/texlive
+            /var/cache/apt/archives
+          key: texlive-${{ runner.os }}-2026-01
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+
+      - name: Build PDFs and HTML
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          mkdir -p dist
+          for tex in set*.tex; do
+            latexmk -pdf -interaction=nonstopmode -halt-on-error "$tex"
+          done
+          cat set*.aux > sets.aux
+          for tex in set*.tex; do
+            latexmk -pdf -interaction=nonstopmode -halt-on-error "$tex"
+            python3 set-to-html.py "$tex"
+            base="${tex%.tex}"
+            if [[ -f "${base}.pdf" ]]; then cp "${base}.pdf" dist/; fi
+            if [[ -f "${base}.html" ]]; then cp "${base}.html" dist/; fi
+          done
+          touch dist/.nojekyll
+
+      - name: Upload HTML to Canvas
+        env:
+          CANVAS_ACCESS_TOKEN: ${{ secrets.CANVAS_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${CANVAS_ACCESS_TOKEN:-}" ]]; then
+            echo "CANVAS_ACCESS_TOKEN not set; skipping Canvas uploads."
+            exit 0 
+          fi
+          if [[ -f set01.html ]]; then python3 upload-to-canvas.py set01.html https://osu.instructure.com/courses/212754/assignments/5546912; fi
+          if [[ -f set02.html ]]; then python3 upload-to-canvas.py set02.html https://osu.instructure.com/courses/212754/assignments/5546916; fi
+          if [[ -f set03.html ]]; then python3 upload-to-canvas.py set03.html https://osu.instructure.com/courses/212754/assignments/5546918; fi
+          if [[ -f set04.html ]]; then python3 upload-to-canvas.py set04.html https://osu.instructure.com/courses/212754/assignments/5546922; fi
+          if [[ -f set05.html ]]; then python3 upload-to-canvas.py set05.html https://osu.instructure.com/courses/212754/assignments/5546925; fi
+          if [[ -f set06.html ]]; then python3 upload-to-canvas.py set06.html https://osu.instructure.com/courses/212754/assignments/5546928; fi
+          if [[ -f set07.html ]]; then python3 upload-to-canvas.py set07.html https://osu.instructure.com/courses/212754/assignments/5546930; fi
+          if [[ -f set08.html ]]; then python3 upload-to-canvas.py set08.html https://osu.instructure.com/courses/212754/assignments/5546933; fi
+          if [[ -f set09.html ]]; then python3 upload-to-canvas.py set09.html https://osu.instructure.com/courses/212754/assignments/5546935; fi
+          if [[ -f set10.html ]]; then python3 upload-to-canvas.py set10.html https://osu.instructure.com/courses/212754/assignments/5546936; fi
+          if [[ -f set11.html ]]; then python3 upload-to-canvas.py set11.html https://osu.instructure.com/courses/212754/assignments/5546937; fi
+          if [[ -f set12.html ]]; then python3 upload-to-canvas.py set12.html https://osu.instructure.com/courses/212754/assignments/5546939; fi
+          if [[ -f set13.html ]]; then python3 upload-to-canvas.py set13.html https://osu.instructure.com/courses/212754/assignments/5546940; fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
