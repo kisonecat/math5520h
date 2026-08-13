@@ -1,0 +1,40 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ind
+*.ilg
+*.lof
+*.lot
+
+# Generated output (built by CI)
+*.pdf
+*.html
+dist/
+
+# AUCTeX
+auto/
+
+# Emacs temp files
+*~
+\#*\#
+.#*
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
