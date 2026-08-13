@@ -52,7 +52,7 @@ jobs:
             week_file=$(printf "reading%02d.tex" "$week_num")
             html_file=$(printf "reading%02d.html" "$week_num")
             echo "Building ${week_file} -> ${html_file}"
-            pandoc -s "${week_file}" -o "${html_file}"
+            pandoc -s "${week_file}" -o "${html_file}" -M date= -M author="Math 5520H"
             echo "Uploading ${html_file} -> ${urls[$idx]}"
             python upload.py "${html_file}" "${urls[$idx]}"
           done
