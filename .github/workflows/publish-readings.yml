@@ -44,7 +44,8 @@ jobs:
             "https://osu.instructure.com/courses/212754/pages/week-11"
             "https://osu.instructure.com/courses/212754/pages/week-12"
             "https://osu.instructure.com/courses/212754/pages/week-13"
-            "https://osu.instructure.com/courses/212754/pages/week-14"
+            "https://osu.instructure.com/courses/212754/pages/week-15"
+            "https://osu.instructure.com/courses/212754/pages/week-16"            
           )
           for idx in "${!urls[@]}"; do
             week_num=$((idx + 1))
